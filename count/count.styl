@@ -1,0 +1,232 @@
+﻿#main
+  width 780px
+  padding-left 20px
+  background-image url('../../media/Art/Count/BKGD_BeachScene.png')
+  background-size 820px 600px  //css3 best to resize image in this case
+#left
+  width 700px
+#right
+  margin-left 50px
+#bottom
+  position relative
+#activityContents
+  overflow hidden
+#d-line
+  position relative
+  z-index 5
+  font-size 2em
+  text-align center
+#currProblem
+  position relative
+  margin auto //margin 0 auto?
+  width 400px
+  p
+    position absolute
+    width 400px
+    top 90px
+  p#problemText
+    font-size 0.8em
+    top 50px
+#currProblem > img
+  width 350px
+  height 240px
+#levelTitle
+  float left
+#answer img
+  width 150px
+#answer
+  font-size 2em
+  margin-top 20px
+#rewards
+  height 200px
+  width 400px
+  img
+    float left
+#workspace
+  float left
+#splats
+  margin 10px
+  float left
+  width 225px
+  height 150px
+.linedivider
+  float left
+  height 20px
+  padding-top 20px
+  margin-top 10px
+  width 75px
+  border-left 1px solid MCiDarkGrey
+  border-right 1px solid MCiDarkGrey
+  test-align center
+#bigstar
+  position absolute
+  left 0
+  top 0
+  z-index 2
+  img
+    float left
+  div, ul
+    margin-left 400px
+    font-weight bold
+    font-size 1.5em
+    background-color MCiLightBlue
+    padding 5px
+    color MCiWhite
+    border-radius  10px
+  ul
+    list-style-position inside
+    cursor pointer
+#timer
+  .clock, .front
+  background-color #fffccc  // MCiSand?
+  border-radius  100px
+  .front
+    -moz-border-radius-topright  0px
+    -webkit-border-top-right-radius  0px
+    -moz-border-radius-bottomright  0px
+    -webkit-border-bottom-right-radius 0px //full declaration
+#splats img
+  width 75px
+.blank
+  width 60px
+  text-align center
+  display inline-block
+  border 2px solid MCiWhite
+  margin 0px
+  height 40px
+  padding 0px 5px 10px 5px
+#numberline
+  width 810px
+  margin auto //margin 0 auto?
+//level function rework
+.levelA, .levelB, .levelC
+  cursor pointer
+  float left
+  width 105px
+  height 105px
+  margin 10px
+  img
+    width 105px
+    height 105px
+    position  relative
+    z-index 10
+.levelD, .levelE, .levelF
+  cursor pointer
+  float left
+  width 50px
+  height 50px
+  margin 10px
+  img
+    width 50px
+    height 50px
+    position  relative
+    z-index 10
+.levelG, .levelH, .levelI, .levelJ
+  cursor pointer
+  float left
+  width 50px
+  height 50px
+  margin 10px
+  img
+    width 50px
+    height 50px
+    position  relative
+    z-index 10
+.line2
+  position relative
+  left 70px
+.big
+  position relative
+  left -10px
+  float left
+  width 105px
+  height 105px
+  margin 10px
+.small
+  position relative
+  left -40px
+  float left
+  width 50px
+  height 50px
+  margin 10px
+#crabstop-levelG
+  position absolute
+  top 135px
+  left 70px
+  .small
+    position relative
+    left -40px
+    float left
+    width 50px
+    height 50px
+    margin 10px
+#crabsbottom-levelG
+  position absolute
+  top -50px
+  .small
+    position relative
+    left -40px
+    float left
+    width 50px
+    height 50px
+    margin 10px
+#sky
+  position  absolute
+  left 0
+  top 0
+  width 800px
+  height 250px
+  overflow hidden
+  #cloud1
+    position absolute
+    left 0
+    top 60px
+    z-index 2
+    img
+      width 170px
+      opacity 0.9
+  #cloud2
+    position absolute
+    left  0
+    top  15px
+    z-index  2
+    img
+     width 100px
+     height 70px
+     opacity 0.9
+#flashyMessage
+  position absolute
+  left 200px
+  top -50px
+#tally
+  width 170px
+  height 120px
+  position absolute
+  top 10px
+  right 10px
+  font-size 0.5em
+  img
+    width 170px
+    height 120px
+#stats
+  position absolute
+  width 100%
+  top 0
+  p
+    margin 0
+.statstext
+  text-align left
+  left 40px
+  position relative
+#statstitle
+  text-align center
+#helpcloud
+  position absolute
+  top 80px
+  left 0
+  width 250px
+.crab
+  position absolute
+  top 0
+  left 0
+  display none

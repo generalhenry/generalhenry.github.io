@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>htilford</title>
+<link href="/" />
+<updated>2011-05-22T23:56:02+00:00</updated>
+<author><name>Henry Allen-Tilford</name></author>
+<id>urn:uuid:BF5FD4CE-7E70-4A6A-B0AC-A6EECD85657E</id>
+<entry>
+<title>image test</title>
+<link href="/entry/2/" />
+<id>urn:uuid:7B686E0D-B2BD-4A6C-935B-7D1897AC6498</id>
+<updated>2011-05-22T23:56:02+00:00</updated>
+<summary></summary>
+</entry>
+<entry>
+<title>This is a blog entry</title>
+<link href="/entry/1/" />
+<id>urn:uuid:3CDFFE6D-3B4C-412E-997D-25C03A1B3BB9</id>
+<updated>2011-05-08T23:40:09+00:00</updated>
+<summary>I have my own server and domain, I figured I should put a blog on it.</summary>
+</entry>
+</feed>

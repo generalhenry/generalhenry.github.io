@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<head>
+<title>catan stats</title>
+<meta name="viewport" content="width=320, initial-scale=1.0, user-scalable = no">  
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js'></script>
+<style>
+  body {
+    margin:0;
+    paddin:0;
+    font-family: MarkerFelt-Wide, sans-serif;
+  }
+  #main {
+    width: 320px;
+    height: 470px;
+  }
+  #keypad {
+    width: 300px;
+    height: 240px;
+    padding: 0 10px;
+    border-radius: 20px 20px 0 0;
+    background-color: rgba( 50, 50, 100, 0.9 );
+    -webkit-box-shadow: inset 0px 0px 20px rgba(25,25,75,1);
+    text-align: center;
+  }
+  #keypad .key {
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 30px;
+    color: white;
+    text-shadow: 0 2px 0 #444;
+    background-color: rgba(100,100,200,0.8);
+    -webkit-box-shadow: inset 0px 0px 10px rgba(75,75,150,1);
+    border-radius: 10px;
+    margin: 10px 5px;
+    display: inline-block;
+    cursor: pointer;
+  }
+  #keypad .key:hover {
+    background-color:rgba(100,100,200,1);
+  }
+  #keypad .key:active {
+    background-color:rgba(100,100,255,1);
+  }
+  #bargraph {
+    width: 308px;
+    height: 200px;
+    padding: 10px 6px;
+    background-color: rgba(50,100,50,0.8);
+    -webkit-box-shadow: inset 0px 0px 20px rgba(25,75,25,1);
+    border-radius: 0 0 20px 20px;
+  }
+  #bargraph #bars .bar, #bargraph #labels .label {
+    display: inline-block;
+    width: 26px;
+    margin: 0 1px;
+    background-color: rgba( 100, 200, 100, 0.8 );
+  }
+  #bargraph #bars {
+    height: 180px;
+  }
+  #bargraph #bars .bar {
+    vertical-align: bottom;
+    min-height: 2px;
+    max-height:180px;
+    border-radius: 5px 5px 0 0;
+  }
+  #bargraph #bars .dummy {
+    height: 100%;
+    width: 0;
+    vertical-align: bottom;
+    display: inline-block;
+  }
+  #bargraph #labels {
+    height: 20px;
+    line-height: 20px;
+  }
+  #bargraph #labels .label {
+    color: white;
+    text-shadow: 0 1px 0 #444;
+    text-align: center;
+    border-radius: 0 0 5px 5px;
+  }
+.container {
+    width: 320px;
+    height: 470px;
+      position: relative;
+      margin: 0 auto 40px;
+      -webkit-perspective: 800;
+      
+    background-color: #444;
+    }
+    
+    #card {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      -webkit-transition: -webkit-transform 1s;
+      -webkit-transform-style: preserve-3d;
+      -webkit-transform-origin: right center;
+    }
+    
+    #card.flipped {
+      -webkit-transform: translateX( -100% ) rotateY( -180deg );
+    }
+    
+    #card figure {
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      -webkit-backface-visibility: hidden;
+    }
+    
+    #card .front {
+          background-color: rgb(50,50,75);
+          -webkit-box-shadow: inset 0px 0px 20px rgba(25,25,50,1);
+      border-radius: 20px;
+      color: rgb(240,240,250);
+      text-shadow: 0 3px 0 #444;
+      text-align: center;
+      line-height: 100px;
+      font-size: 25px;
+    }
+    
+    #card .back {
+      -webkit-transform: rotateY( 180deg );
+
+    }
+</style>
+<script>
+  $(document).ready( function () {
+    var $main = $('#main');
+    var $keypad = $('<div id=keypad></div>');
+    for( var key = 2; key <= 12; key++ ) {
+      
+      $keypad.append('<img class="PreventSafariFromTurningIntoLink" />');
+      $keypad.append('<label class=key>' + key + '</label>');
+    }
+    var $keys = $keypad.find('.key');
+    $main.append( $keypad );
+    var $bargraph = $('<div id=bargraph></div>');
+    var $barsContainer = $('<div id=bars></div>');
+    var $labelsContainer = $('<div id=labels></div>');
+    var heights = [];
+    for( var i = 2; i <= 12; i++ ) {
+      $barsContainer.append('<div class=bar></div>');
+      $labelsContainer.append('<img class="PreventSafariFromTurningIntoLink" />');
+      $labelsContainer.append('<label class=label>' + i + '</label>');
+      heights.push(0);
+    }
+    $barsContainer.append('<div class=dummy></div>');
+    var $bars = $barsContainer.find('.bar');
+    var $labels = $labelsContainer.find('.label');
+    $bargraph.append($barsContainer).append($labelsContainer);
+    $main.append($bargraph);
+    $keys.click(keyclick);
+    function keyclick (event) {
+      var index = $keys.index(this);
+      heights[index] += 10;
+      $bars.eq(index).height( heights[index] );
+      event.stopPropagation();
+      event.preventDefault();
+    }
+    $keys.bind('touchstart',keyclick);
+    $('body').bind('touchstart',function(event) {
+      event.preventDefault();
+    });
+    $bars.click(barclick);
+    $bars.bind('touchstart',barclick);
+    function barclick (event) {
+      var index = $bars.index(this);
+      var data = heights[index] / 10;
+      alert( data );
+      event.stopPropagation();
+      event.preventDefault();
+    }
+    $('body').click( function () {
+      $('#card').addClass('flipped');
+    }).bind('touchstart', function () {
+      $('#card').addClass('flipped');
+    });
+  });
+</script>
+</head>
+<body>
+  <section class="container">
+    <div id="card">
+      <figure class="front">
+        <h1>Catan Dice Tracker</h1>
+        <p>Touch to start</p>
+      </figure>
+      <figure class="back" id=main></figure>
+    </div>
+  </section>
+</body>

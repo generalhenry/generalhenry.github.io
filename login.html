@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<title>Register</title>
+
+<style>
+  body {
+    background-color: rgb(30, 30, 40);
+    font-family: sans-serif;
+  }
+  #main {
+    width: 1200px;
+    height: 800px;
+    margin: 10px auto;
+    background-color: rgb(130,130,140);
+    border-radius: 50px;
+    position: relative;
+  }
+  #main header {
+    background-color: rgb(80, 80, 90);
+    height: 100px;
+    line-height: 100px;
+    border-radius: 50px 50px 0 0;
+    color: rgb(230,230,240);
+  }
+  #main header h1 {
+    text-align: center;
+  }
+  #main #kids {
+    margin: 50px;
+    padding: 50px;
+    height: 500px;
+    background-color: rgb(180, 180, 190);
+    border-radius: 35px;
+  }
+  #main #kids .kid {
+    margin: 10px;
+    display: inline-block;
+    float: left;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgb(230, 230, 240);
+    color: rgb(30,30,40);
+    font-weight: bold;
+    cursor: pointer;
+  }
+  #main #kids .kid:hover {
+    background-color: rgb(240, 240, 250);
+  }
+  #main #kids .kid:active {
+    background-color: rgb(245, 245, 255);
+  }
+  #main #kids .kid.registered {
+    background-color: rgb(190, 190, 200);
+    color: rgb(80,80,90);
+  }
+  #main #kids .kid.registered:hover {
+   background-color: rgb(200, 200, 210);
+  }
+  #main #kids .kid.registered:active {
+   background-color: rgb(210, 210, 220);
+  }
+  #main #kids .kid.inactive {
+    background-color: rgb(185, 185, 195);
+  }
+  #main #dialog, #main #print, #main #login {
+    background-color: rgb(240, 240, 250);
+    position: absolute;
+    top: 300px;
+    left: 400px;
+    padding: 40px;
+    border-radius: 30px;
+    display: none;
+    width: 300px
+  }
+  #main #dialog label, #main #print label, #main #login label {
+    width: 40%;
+    display: inline-block;
+  }
+  #main #dialog input {
+    width: 50%;
+    border-radius: 3px;
+  }
+  #main #dialog #register, #main #print #printButton, #main #login #loginButton {
+    margin: 10px 100px;
+  }
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+<script>
+  $( function () {
+    $('.kid').each( function() {
+      if( $(this).text() === '' ) {
+        $(this).addClass('inactive');
+      }
+    });
+    var $activeKid = [];
+    $('.kid:not(.inactive)').click( function () {
+      $('#dialog').fadeIn();
+      $activeKid = $(this);
+    });
+    $('#register').click( function () {
+      $activeKid.unbind('click');
+      $activeKid.addClass('registered');
+      if( $('.kid:not(.inactive, .registered)').length === 0 ) {
+        $('header h1').text('Login');
+      }
+      $('#dialog').fadeOut(function () {
+        var userName = $('#userName').val();
+        var password = $('#password').val();
+        $('#userName').val('');
+        $('#password').val('');
+        $('#printUserName').text( userName );
+        $('#printPassword').text( password );
+        $('#print').fadeIn();
+        $activeKid.text( userName );
+        $activeKid.click( function () {
+          $('#login').fadeIn();
+        });
+      });
+    });
+    $('#printButton').click( function () {
+      $('#print').fadeOut();
+    });
+    $('#loginButton').click( function () {
+      $('#login').fadeOut(function () {
+        $('#loginPassword').val('');
+      });
+    });
+  });
+</script>
+
+<body>
+  <div id=main>
+    <header>
+      <h1>Register</h1>
+    </header>
+    <div id=kids>
+      <div class=kid>Henry A</div>
+      <div class=kid>Suzy G</div>
+      <div class=kid>Jacob S</div>
+      <div class=kid>Kenny G</div>
+      <div class=kid>Chris G</div>
+      <div class=kid>Dan S</div>
+      <div class=kid>Victoria F</div>
+      <div class=kid>Bob D</div>
+      <div class=kid>Cindy B</div>
+      <div class=kid>Carl P</div>
+      <div class=kid>Freddie A</div>
+      <div class=kid>Sarah Y</div>
+      <div class=kid>Charlie T</div>
+      <div class=kid>Tina F</div>
+      <div class=kid>Christine L</div>
+      <div class=kid>Patricia R</div>
+      <div class=kid>Cliff T</div>
+      <div class=kid></div>
+      <div class=kid></div>
+      <div class=kid></div>
+      <div class=kid></div>
+      <div class=kid></div>
+      <div class=kid></div>
+      <div class=kid></div>
+      <div class=kid></div>
+      <div class=kid></div>
+      <div class=kid></div>
+      <div class=kid></div>
+      <div class=kid></div>
+      <div class=kid></div>
+      <div class=kid></div>
+      <div class=kid></div>
+    </div>
+    <div id=dialog>
+      <div class=userNameContatiner>
+        <label>User Name:</label>
+        <input id=userName type=text>
+      </div>
+      <div class=passwordContatiner>
+        <label>Password:</label>
+        <input id=password type=text>
+      </div>
+      <button id=register>Register</button>
+    </div>
+    <div id=print>
+      <div class=userNameContatiner>
+        <label>User Name:</label>
+        <span id=printUserName></span>
+      </div>
+      <div class=passwordContatiner>
+        <label>Password:</label>
+        <span id=printPassword></span>
+      </div>
+      <button id=printButton>Print</button>
+    </div>
+    <div id=login>
+      <div class=passwordContatiner>
+        <label>Password:</label>
+        <input id=loginPassword type=text>
+      </div>
+      <button id=loginButton>Login</button>
+    </div>
+  </div>
+</body>

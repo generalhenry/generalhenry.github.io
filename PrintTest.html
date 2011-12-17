@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<title>Print Test</title>
+<style>
+  #problems {
+    width: 8.4in;
+    margin: 0 auto;
+    position: relative;
+  }
+  #problems .problem {
+    width: 50%;
+    height: 5.3in;
+    line-height: 5.3in;
+    font-size: 2in;
+  }
+  #problems .problem:nth-child(4n+1) {
+    color: red;
+  }
+  #problems .problem:nth-child(4n+2) {
+    color: green;
+  }
+  #problems .problem:nth-child(4n+3) {
+    position: relative;
+    right: -4.2in;
+    top: -10.6in;
+    height: 0;
+    width: 0;
+    color: blue;
+  }
+  #problems .problem:nth-child(4n+4) {
+    position: relative;
+    right: -4.2in;
+    top: -5.3in;
+    height: 0;
+    width: 0;
+    color: purple;
+  }
+</style>
+<div id=problems>
+  <div class=problem>p1</div>
+  <div class=problem>p2</div>
+  <div class=problem>p3</div>
+  <div class=problem>p4</div>
+  <div class=problem>p5</div>
+  <div class=problem>p6</div>
+  <div class=problem>p7</div>
+  <div class=problem>p8</div>
+</div>

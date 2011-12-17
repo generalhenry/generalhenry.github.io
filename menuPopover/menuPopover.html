@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<title>menu popover test</title>
+<style>
+  body {
+    background-color: #C5DFFF;
+    font-family: sans-serif;
+    color: #33333D;
+  }
+  #popOver {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    background-color: #FAFAFA;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  #popOverContents {
+    background-color: #F2F2F2;
+    border-radius: 15px;
+    min-width: 400px;
+    min-height: 300px;
+    box-shadow: inset 0px 0px 2px #33333d;
+    overflow: hidden;
+  }
+  #header {
+    background-color: #17D92E;
+    border-radius: 15px 15px 0 0;
+    color: #FAFAFA;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 5px;
+    box-shadow: inset 0px 0px 2px #33333d;
+  }
+  #close {
+    float: right;
+    cursor: pointer;
+    border: 2px solid #FAFAFA;
+    border-radius: 400px;
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    line-height: 1em;
+  }
+  #close:hover {
+    background-color: #73EC5A;
+  }
+  #tabs {
+    background-color: #D1EEDC;
+    padding-top: 5px;
+    padding-left: 10px;
+    box-shadow: inset 0px 0px 2px #33333d;
+  }
+  #tabs .tab {
+    display: inline-block;
+    background-color: #73EC5A;
+    padding: 3px;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    box-shadow: inset 0px 0px 2px #33333d;
+  }
+  #tabs .tab:hover {
+    box-shadow: inset 0px 0px 6px #33333d;
+  }
+  #tabs .tab.active {
+     background-color: #17D92E;
+     color: #FAFAFA;
+  }
+  #contents .content {
+    display: none;
+  }
+  #contents .content.active {
+    display: block;
+  }
+  .activity {
+    box-shadow: inset 0px 0px 2px #33333d;
+  }
+  .activity .title {
+    padding: 2px;
+    font-weight: bold;
+    font-size: 1.2em;
+    background-color: #D1EEDC;
+    box-shadow: inset 0px 0px 2px #33333d;
+    text-align: center;
+  }
+  .activity .level {
+    cursor: pointer;
+    margin-left: 10px;
+    padding-left: 20px;
+    background-image: url('Portal_Bullet13x16.png');
+    background-repeat: no-repeat;
+    background-position: 3px 1px;
+  }
+  .activity .level:hover {
+    box-shadow: inset 0px 0px 2px #33333d;
+    border-radius: 10px 0 0 10px;
+  }
+</style>
+<script src='http://code.jquery.com/jquery-1.6.1.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.js'></script>
+<script>
+  $(document).ready( function () {
+    $('button').click( function () {
+      $('#popOver').fadeIn(200);
+    });
+    $('#close').click( function () {
+      $('#popOver').fadeOut( 200 );
+    });
+    $('#popOver').draggable();
+    $('#tabs .tab').click( function () {
+      $('#tabs .tab, #contents .content').removeClass('active');
+      $(this).addClass('active');
+      var index = $('#tabs .tab').index( this );
+      $('#contents .content').eq( index ).addClass('active');
+    });
+  });
+  //Portal_Bullet13x16.png
+</script>
+<button>Click me</button>
+<div id=popOver>
+  <div id=popOverContents>
+    <div id=header>
+      <div id=close>&Chi;</div>
+      <div id=title>Fractions</div>
+    </div>
+    <div id=tabs>
+      <div class='tab active'>Games/Practice</div>
+      <div class=tab>Lessons + Practice</div>
+    </div>
+    <div id=contents>
+      <div class='content active'>
+        <div class=activity>
+          <div class=title>Equivalent Fractions</div>
+            <div class=level>Equivalent Fractions (Beginner)</div>
+            <div class=level>Equivalent Fractions (Advanced)</div>
+            <div class=level>Match Fractions and Decimals</div>
+            <div class=level>Write Fractions for Decimals</div>
+            <div class=level>Match Fractions and Percents</div>
+            <div class=level>Write Fractions for Percents</div>
+        </div>
+        <div class=activity>
+          <div class=title>Models for Fractions</div>
+            <div class=level>Halves, Thirds, Fourths</div>
+            <div class=level>Simplest Form (Halves, Thirds, Fourths)</div>
+            <div class=level>Fifths, Sixths, Sevenths</div>
+            <div class=level>Simplest Form (Fifths, Sixths, Sevenths)</div>
+            <div class=level>Eighths through Twelfths</div>
+            <div class=level>Write Fractions for Models (Halves, Thirds, Fourths)</div>
+            <div class=level>Write Fractions for Models (Fifths, Sixths, Sevenths)</div>
+            <div class=level>Write Fractions for Models (Eighths through Twelfths)</div>
+            <div class=level>Write Fractions for Models (Advanced)</div>
+        </div>
+      </div>
+      <div class=content>
+        <div class=activity>
+          <div class=title>Model Equivalent Fractions</div>
+            <div class=level>Non-Unit Fractions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

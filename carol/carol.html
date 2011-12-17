@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<title>carol</title>
+<style media="screen">
+  body {
+    background-color: #444;
+  }
+  .container {
+    width: 210px;
+    height: 140px;
+    position: relative;
+    margin: 0 auto 40px;
+    -webkit-perspective: 1100;
+  }
+  #carol {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+  }
+  .ready #carol {
+    -webkit-transition: -webkit-transform 2s;
+  }
+  #carol.panels-backface-invisible img {
+    -webkit-backface-visibility: hidden;
+  }
+  #carol img {
+    display: block;
+    position: absolute;
+    width: 186px;
+    height: 116px;
+    left: 10px;
+    top: 10px;
+    -webkit-box-reflect:below 5px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.5, transparent), to(white));
+  }
+  #carol img:hover {
+      width: 196px;
+    height: 126px;
+    top: 0;
+  }
+  .ready #carousel img {
+    -webkit-transition-property: -webkit-transform, opacity;
+    -webkit-transition-duration: 1s;
+  }
+</style>
+<script src='http://code.jquery.com/jquery-1.6.1.js'></script>
+<script>
+  var imagesArr = [
+    'Addition & Subtraction',
+    'Algebraic Thinking',
+    'Counting',
+    'Decimals',
+    'Division',
+    'Factors & Multiples',
+    'Fractions',
+    'Geometry',
+    'Measurement',
+    'Multiplication Basic Facts',
+    'Percent',
+    'Place Value',
+    'ProblemSolvingTopicButton',
+    'RateRatioPropTopicButton',
+    'Rounding'
+  ];
+  function Carousel3D ( el ) {
+    this.element = el;
+    this.rotation = 0;
+    this.panelCount = 0;
+    this.theta = 0;
+    this.isHorizontal = true;
+  }
+  Carousel3D.prototype.modify = function() {
+    var panel, angle, i;
+    this.panelSize = this.element[ this.isHorizontal ? 'outerWidth' : 'outerHeight' ]();
+    this.rotateFn = this.isHorizontal ? 'rotateY' : 'rotateX';
+    this.theta = 360 / this.panelCount;
+    this.radius = Math.round( ( this.panelSize / 2) / Math.tan( Math.PI / this.panelCount ) );
+    for ( i = 0; i < this.panelCount; i++ ) {
+      panel = this.element.find('img').eq(i);
+      angle = this.theta * i;
+      panel.css({ 
+        opacity: 1,
+        webkitTransform: this.rotateFn + '(' + angle + 'deg) translateZ(' + this.radius + 'px) rotateX(20deg)'
+      });
+    }
+    this.rotation = Math.round( this.rotation / this.theta ) * this.theta;
+    this.transform();
+  };
+  Carousel3D.prototype.transform = function() {
+    this.element.css({ webkitTransform: 'translateZ(-' + this.radius + 'px) ' + this.rotateFn + '(' + this.rotation + 'deg) translateY(300px)' });
+  };
+  $(document).ready( function () {
+    var $carol = $('#carol');
+    for( var i = 0, len = imagesArr.length; i < len; i++) {
+      $carol.append('<img alt="' + imagesArr[i] + '" src="' + imagesArr[i] + '.png" />');
+    }
+    var carol = new Carousel3D( $carol );
+    // populate on startup
+    carol.panelCount = imagesArr.length;
+    carol.modify();
+    setTimeout( function(){
+      $('body').addClass('ready');
+      rotate();
+    }, 0);
+    function rotate () {
+      var increment = 1;
+      carol.rotation += carol.theta * increment * -1;
+      carol.transform();
+      setTimeout( rotate, 3000 );
+    }
+  });
+</script>
+<script type="text/javascript" src="http://api.bitp.it/bitp.it.js"></script>
+<script type="text/javascript">
+  bitpit({clientId: "963"});
+</script>
+<body>
+  <div class=container>
+    <div id=carol></div>
+  </div>
+</body>
