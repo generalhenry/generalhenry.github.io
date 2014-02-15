@@ -1,0 +1,117 @@
+@import 'node_modules/nib'
+@import 'stylus-boilerplate'
+
+body
+  color #353F5C
+  font-size 1.1em
+  background-color #555
+
+@keyframes shake
+  0%   
+    left 0px 
+  25%  
+    left 10px 
+  50%  
+    left -10px 
+  66%  
+    left 5px 
+  83%  
+    left -5px 
+  100% 
+    left 0px 
+
+footer, a
+  color #222
+
+input
+  border 1px solid #E4E4E4
+
+.stripe
+  background-color #D6AB00
+
+header 
+  background-color #FFF
+  .stripe
+    height 18px
+
+.body
+  background-color #ffffe0
+  padding 100px 0
+
+  .login
+    background-color #eee
+    box-shadow 0 0 10px #888
+    width 300px
+    margin 0 auto
+    padding 20px 50px
+    position relative
+    border-radius 10px
+
+    &.wrong
+      animation shake 0.5s
+      background-color #ddd
+    
+    div
+      margin 5px 0
+
+    legend
+      padding-left 33%
+
+    label
+      width 28%
+      padding-right 5%
+      font-size 0.9em
+      font-weight normal
+      display inline-block
+      text-align right
+      text-shadow 0 1px 0 white
+
+    input
+      width 65%
+      display inline-block
+
+    .forgot
+      padding-left 33%
+      font-size 0.7em
+
+    button
+      reset-font()
+      font-size 0.8em
+      padding 5px 20px
+      color #FAFAFA
+      border 0
+      border-radius 5px
+      margin 10px 0
+      margin-left 33%
+      cursor pointer
+      text-shadow 1px 1px 1px #3C4863
+      background #596e9a
+      background-image linear-gradient(top, #596e9a, #51658f) 
+
+      &:hover
+        background #51658f 
+        background-image linear-gradient(top, #51658f, #596e9a)
+
+      &:active
+        background #51658f
+
+footer
+  font-size 0.8em
+  background-color #ffffe0
+
+  a
+    text-decoration none
+
+  .stripe
+    height 5px
+    margin-bottom 5px
+    clear both
+
+  .contact
+    float left
+    margin-left 5em
+
+  .copyright
+    float right
+    margin-right 5em
+    padding-bottom 10px

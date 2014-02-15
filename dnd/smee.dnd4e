@@ -1,0 +1,1720 @@
+<D20Character game-system="D&amp;D4E" Version="0.07a" legality="rules-legal" >
+   <!--
+      Dungeons and Dragons Insider: Character Builder character save file
+   -->
+
+
+   <CharacterSheet>
+
+
+      <Details>
+         <name> Smee </name>
+         <Level> 1 </Level>
+         <Player>  </Player>
+         <Height>  </Height>
+         <Weight>  </Weight>
+         <Gender>  </Gender>
+         <Age>  </Age>
+         <Alignment>  </Alignment>
+         <Company>  </Company>
+         <Portrait>  </Portrait>
+         <Experience>  </Experience>
+         <CarriedMoney> 100 gp </CarriedMoney>
+         <StoredMoney>  </StoredMoney>
+         <Traits>  </Traits>
+         <Appearance>  </Appearance>
+         <Companions>  </Companions>
+         <Notes>  </Notes>
+      </Details>
+
+      <!--
+         Base ability scores (see stats of same name for final adjusted score)
+      -->
+      <AbilityScores legality="rules-legal" >
+         <Strength score="14" />
+         <Constitution score="10" />
+         <Dexterity score="18" />
+         <Intelligence score="10" />
+         <Wisdom score="11" />
+         <Charisma score="8" />
+      </AbilityScores>
+
+
+      <!--
+         Final computed stat values - the various numbers
+         on the character sheet are here along with behind the scenes
+         values to build them.
+      -->
+      <StatBlock>
+         <Stat value="14" >
+            <alias name="Strength" />
+            <alias name="STR" />
+            <statadd value="14" />
+         </Stat>
+
+         <Stat value="12" >
+            <alias name="Constitution" />
+            <alias name="con" />
+            <statadd value="10" />
+            <statadd Level="1" value="2" charelem="1" />
+         </Stat>
+
+         <Stat value="20" >
+            <alias name="Dexterity" />
+            <alias name="DEX" />
+            <statadd value="18" />
+            <statadd Level="1" value="2" charelem="2" />
+         </Stat>
+
+         <Stat value="10" >
+            <alias name="Intelligence" />
+            <alias name="INT" />
+            <statadd value="10" />
+         </Stat>
+
+         <Stat value="11" >
+            <alias name="Wisdom" />
+            <alias name="WIS" />
+            <statadd value="11" />
+         </Stat>
+
+         <Stat value="8" >
+            <alias name="Charisma" />
+            <alias name="CHA" />
+            <statadd value="8" />
+         </Stat>
+
+         <Stat value="2" >
+            <alias name="Strength modifier" />
+            <statadd Level="1" value="1" statlink="Strength" abilmod="true" charelem="3" />
+         </Stat>
+
+         <Stat value="5" >
+            <alias name="Dexterity modifier" />
+            <statadd Level="1" value="1" statlink="Dexterity" abilmod="true" charelem="3" />
+         </Stat>
+
+         <Stat value="1" >
+            <alias name="Constitution modifier" />
+            <statadd Level="1" value="1" statlink="Constitution" abilmod="true" charelem="3" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Intelligence modifier" />
+            <statadd Level="1" value="1" statlink="Intelligence" abilmod="true" charelem="3" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Wisdom modifier" />
+            <statadd Level="1" value="1" statlink="Wisdom" abilmod="true" charelem="3" />
+         </Stat>
+
+         <Stat value="-1" >
+            <alias name="Charisma modifier" />
+            <statadd Level="1" value="1" statlink="Charisma" abilmod="true" charelem="3" />
+         </Stat>
+
+         <Stat value="19" >
+            <alias name="AC" />
+            <alias name="Armor Class" />
+            <statadd Level="1" value="10" charelem="3" />
+            <statadd Level="1" value="1" statlink="HALF-LEVEL" charelem="3" />
+            <statadd type="Ability" Level="1" not-wearing="armor:heavy" value="1" statlink="Dexterity" abilmod="true" charelem="3" />
+            <statadd type="Ability" Level="1" not-wearing="armor:heavy" value="1" statlink="Intelligence" abilmod="true" charelem="3" />
+            <statadd type="Defensive" Level="1" wearing="DEFENSIVE:" value="1" charelem="3" />
+            <statadd type="Racial" Level="1" conditional="against attacks from traps" value="2" charelem="4" />
+            <statadd Level="1" value="1" statlink="Unarmored Defense" charelem="5" />
+            <statadd type="Feat" Level="1" wearing="armor:cloth" value="2" charelem="6" />
+            <statadd type="Feat" Level="1" not-wearing="armor:" value="2" charelem="6" />
+         </Stat>
+
+         <Stat value="13" >
+            <alias name="Fortitude Defense" />
+            <alias name="Fortitude" />
+            <statadd Level="1" value="10" charelem="3" />
+            <statadd Level="1" value="1" statlink="HALF-LEVEL" charelem="3" />
+            <statadd type="Ability" Level="1" value="1" statlink="Strength" abilmod="true" charelem="3" />
+            <statadd type="Ability" Level="1" value="1" statlink="Constitution" abilmod="true" charelem="3" />
+            <statadd type="Class" Level="1" value="1" statlink="Fortitude Defense Class Bonus" charelem="3" />
+            <statadd type="Racial" Level="1" conditional="against attacks from traps" value="2" charelem="4" />
+         </Stat>
+
+         <Stat value="16" >
+            <alias name="Reflex Defense" />
+            <alias name="Reflex" />
+            <statadd Level="1" value="10" charelem="3" />
+            <statadd Level="1" value="1" statlink="HALF-LEVEL" charelem="3" />
+            <statadd type="Ability" Level="1" value="1" statlink="Dexterity" abilmod="true" charelem="3" />
+            <statadd type="Ability" Level="1" value="1" statlink="Intelligence" abilmod="true" charelem="3" />
+            <statadd type="Class" Level="1" value="1" statlink="Reflex Defense Class Bonus" charelem="3" />
+            <statadd type="Racial" Level="1" conditional="against attacks from traps" value="2" charelem="4" />
+         </Stat>
+
+         <Stat value="12" >
+            <alias name="Will Defense" />
+            <alias name="Will" />
+            <statadd Level="1" value="10" charelem="3" />
+            <statadd Level="1" value="1" statlink="HALF-LEVEL" charelem="3" />
+            <statadd type="Ability" Level="1" value="1" statlink="Wisdom" abilmod="true" charelem="3" />
+            <statadd type="Ability" Level="1" value="1" statlink="Charisma" abilmod="true" charelem="3" />
+            <statadd type="Class" Level="1" value="1" statlink="Will Defense Class Bonus" charelem="3" />
+            <statadd type="Racial" Level="1" conditional="against attacks from traps" value="2" charelem="4" />
+            <statadd Level="1" value="1" statlink="Stone Fist" charelem="7" />
+         </Stat>
+
+         <Stat value="3" >
+            <alias name="Death Saves Count" />
+            <statadd Level="1" value="3" charelem="3" />
+         </Stat>
+
+         <Stat value="1" >
+            <alias name="Level" />
+            <statadd Level="1" value="1" charelem="3" />
+         </Stat>
+
+         <Stat value="24" >
+            <alias name="Hit Points" />
+            <statadd type="Level 1" Level="1" value="1" statlink="Constitution" charelem="3" />
+            <statadd Level="1" value="1" statlink="_LEVEL-ONE-HPS" charelem="3" />
+         </Stat>
+
+         <Stat value="12" >
+            <alias name="_LEVEL-ONE-HPS" />
+            <statadd Level="1" value="12" charelem="8" />
+         </Stat>
+
+         <Stat value="8" >
+            <alias name="Healing Surges" />
+            <statadd type="Level 1" Level="1" requires="!NoConToHealingSurges" value="1" statlink="Constitution" abilmod="true" charelem="3" />
+            <statadd type="Class" Level="1" value="7" charelem="8" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="HALF-LEVEL" />
+         </Stat>
+
+         <Stat value="1" >
+            <alias name="Fortitude Defense Class Bonus" />
+            <statadd Level="1" value="1" charelem="8" />
+         </Stat>
+
+         <Stat value="1" >
+            <alias name="Reflex Defense Class Bonus" />
+            <statadd Level="1" value="1" charelem="8" />
+         </Stat>
+
+         <Stat value="1" >
+            <alias name="Will Defense Class Bonus" />
+            <statadd Level="1" value="1" charelem="8" />
+         </Stat>
+
+         <Stat value="5" >
+            <alias name="Initiative" />
+            <statadd Level="1" value="1" statlink="HALF-LEVEL" charelem="3" />
+            <statadd type="Ability" Level="1" value="1" statlink="Dexterity" abilmod="true" charelem="3" />
+            <statadd Level="1" value="1" statlink="Initiative Misc" charelem="3" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Initiative Misc" />
+         </Stat>
+
+         <Stat value="2" >
+            <alias name="Ring Slots" />
+            <statadd Level="1" value="2" charelem="3" />
+         </Stat>
+
+         <Stat value="1" >
+            <alias name="_BaseActionPoints" />
+            <statadd Level="1" value="1" charelem="3" />
+         </Stat>
+
+         <Stat value="1000" >
+            <alias name="XP Needed" />
+            <statadd Level="1" value="1000" charelem="3" />
+         </Stat>
+
+         <Stat value="10" >
+            <alias name="Acrobatics" />
+            <statadd Level="1" value="1" statlink="HALF-LEVEL" charelem="9" />
+            <statadd type="Ability" Level="1" value="1" statlink="Dexterity" abilmod="true" charelem="9" />
+            <statadd Level="1" value="1" statlink="Acrobatics Trained" charelem="9" />
+            <statadd Level="1" value="1" statlink="Acrobatics Misc" charelem="9" />
+            <statadd type="Armor Penalty" Level="1" value="1" statlink="Armor Penalty" charelem="9" />
+         </Stat>
+
+         <Stat value="5" >
+            <alias name="Acrobatics Trained" />
+            <statadd type="trained" Level="1" value="5" charelem="10" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Acrobatics Misc" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Armor Penalty" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Arcana" />
+            <statadd Level="1" value="1" statlink="HALF-LEVEL" charelem="9" />
+            <statadd type="Ability" Level="1" value="1" statlink="Intelligence" abilmod="true" charelem="9" />
+            <statadd Level="1" value="1" statlink="Arcana Trained" charelem="9" />
+            <statadd Level="1" value="1" statlink="Arcana Misc" charelem="9" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Arcana Trained" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Arcana Misc" />
+         </Stat>
+
+         <Stat value="-1" >
+            <alias name="Bluff" />
+            <statadd Level="1" value="1" statlink="HALF-LEVEL" charelem="9" />
+            <statadd type="Ability" Level="1" value="1" statlink="Charisma" abilmod="true" charelem="9" />
+            <statadd Level="1" value="1" statlink="Bluff Trained" charelem="9" />
+            <statadd Level="1" value="1" statlink="Bluff Misc" charelem="9" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Bluff Trained" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Bluff Misc" />
+         </Stat>
+
+         <Stat value="-1" >
+            <alias name="Diplomacy" />
+            <statadd Level="1" value="1" statlink="HALF-LEVEL" charelem="9" />
+            <statadd type="Ability" Level="1" value="1" statlink="Charisma" abilmod="true" charelem="9" />
+            <statadd Level="1" value="1" statlink="Diplomacy Trained" charelem="9" />
+            <statadd Level="1" value="1" statlink="Diplomacy Misc" charelem="9" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Diplomacy Trained" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Diplomacy Misc" />
+         </Stat>
+
+         <Stat value="2" >
+            <alias name="Dungeoneering" />
+            <statadd Level="1" value="1" statlink="HALF-LEVEL" charelem="9" />
+            <statadd type="Ability" Level="1" value="1" statlink="Wisdom" abilmod="true" charelem="9" />
+            <statadd Level="1" value="1" statlink="Dungeoneering Trained" charelem="9" />
+            <statadd Level="1" value="1" statlink="Dungeoneering Misc" charelem="9" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Dungeoneering Trained" />
+         </Stat>
+
+         <Stat value="2" >
+            <alias name="Dungeoneering Misc" />
+            <statadd type="Racial" Level="1" value="2" charelem="11" />
+         </Stat>
+
+         <Stat value="1" >
+            <alias name="Endurance" />
+            <statadd Level="1" value="1" statlink="HALF-LEVEL" charelem="9" />
+            <statadd type="Ability" Level="1" value="1" statlink="Constitution" abilmod="true" charelem="9" />
+            <statadd Level="1" value="1" statlink="Endurance Trained" charelem="9" />
+            <statadd Level="1" value="1" statlink="Endurance Misc" charelem="9" />
+            <statadd type="Armor Penalty" Level="1" value="1" statlink="Armor Penalty" charelem="9" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Endurance Trained" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Endurance Misc" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Heal" />
+            <statadd Level="1" value="1" statlink="HALF-LEVEL" charelem="9" />
+            <statadd type="Ability" Level="1" value="1" statlink="Wisdom" abilmod="true" charelem="9" />
+            <statadd Level="1" value="1" statlink="Heal Trained" charelem="9" />
+            <statadd Level="1" value="1" statlink="Heal Misc" charelem="9" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Heal Trained" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Heal Misc" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="History" />
+            <statadd Level="1" value="1" statlink="HALF-LEVEL" charelem="9" />
+            <statadd type="Ability" Level="1" value="1" statlink="Intelligence" abilmod="true" charelem="9" />
+            <statadd Level="1" value="1" statlink="History Trained" charelem="9" />
+            <statadd Level="1" value="1" statlink="History Misc" charelem="9" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="History Trained" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="History Misc" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Insight" />
+            <statadd Level="1" value="1" statlink="HALF-LEVEL" charelem="9" />
+            <statadd type="Ability" Level="1" value="1" statlink="Wisdom" abilmod="true" charelem="9" />
+            <statadd Level="1" value="1" statlink="Insight Trained" charelem="9" />
+            <statadd Level="1" value="1" statlink="Insight Misc" charelem="9" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Insight Trained" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Insight Misc" />
+         </Stat>
+
+         <Stat value="-1" >
+            <alias name="Intimidate" />
+            <statadd Level="1" value="1" statlink="HALF-LEVEL" charelem="9" />
+            <statadd type="Ability" Level="1" value="1" statlink="Charisma" abilmod="true" charelem="9" />
+            <statadd Level="1" value="1" statlink="Intimidate Trained" charelem="9" />
+            <statadd Level="1" value="1" statlink="Intimidate Misc" charelem="9" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Intimidate Trained" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Intimidate Misc" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Nature" />
+            <statadd Level="1" value="1" statlink="HALF-LEVEL" charelem="9" />
+            <statadd type="Ability" Level="1" value="1" statlink="Wisdom" abilmod="true" charelem="9" />
+            <statadd Level="1" value="1" statlink="Nature Trained" charelem="9" />
+            <statadd Level="1" value="1" statlink="Nature Misc" charelem="9" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Nature Trained" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Nature Misc" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Perception" />
+            <statadd Level="1" value="1" statlink="HALF-LEVEL" charelem="9" />
+            <statadd type="Ability" Level="1" value="1" statlink="Wisdom" abilmod="true" charelem="9" />
+            <statadd Level="1" value="1" statlink="Perception Trained" charelem="9" />
+            <statadd Level="1" value="1" statlink="Perception Misc" charelem="9" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Perception Trained" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Perception Misc" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Religion" />
+            <statadd Level="1" value="1" statlink="HALF-LEVEL" charelem="9" />
+            <statadd type="Ability" Level="1" value="1" statlink="Intelligence" abilmod="true" charelem="9" />
+            <statadd Level="1" value="1" statlink="Religion Trained" charelem="9" />
+            <statadd Level="1" value="1" statlink="Religion Misc" charelem="9" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Religion Trained" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Religion Misc" />
+         </Stat>
+
+         <Stat value="10" >
+            <alias name="Stealth" />
+            <statadd Level="1" value="1" statlink="HALF-LEVEL" charelem="9" />
+            <statadd type="Ability" Level="1" value="1" statlink="Dexterity" abilmod="true" charelem="9" />
+            <statadd Level="1" value="1" statlink="Stealth Trained" charelem="9" />
+            <statadd Level="1" value="1" statlink="Stealth Misc" charelem="9" />
+            <statadd type="Armor Penalty" Level="1" value="1" statlink="Armor Penalty" charelem="9" />
+         </Stat>
+
+         <Stat value="5" >
+            <alias name="Stealth Trained" />
+            <statadd type="trained" Level="1" value="5" charelem="12" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Stealth Misc" />
+         </Stat>
+
+         <Stat value="-1" >
+            <alias name="Streetwise" />
+            <statadd Level="1" value="1" statlink="HALF-LEVEL" charelem="9" />
+            <statadd type="Ability" Level="1" value="1" statlink="Charisma" abilmod="true" charelem="9" />
+            <statadd Level="1" value="1" statlink="Streetwise Trained" charelem="9" />
+            <statadd Level="1" value="1" statlink="Streetwise Misc" charelem="9" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Streetwise Trained" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Streetwise Misc" />
+         </Stat>
+
+         <Stat value="12" >
+            <alias name="Thievery" />
+            <statadd Level="1" value="1" statlink="HALF-LEVEL" charelem="9" />
+            <statadd type="Ability" Level="1" value="1" statlink="Dexterity" abilmod="true" charelem="9" />
+            <statadd Level="1" value="1" statlink="Thievery Trained" charelem="9" />
+            <statadd Level="1" value="1" statlink="Thievery Misc" charelem="9" />
+            <statadd type="Armor Penalty" Level="1" value="1" statlink="Armor Penalty" charelem="9" />
+         </Stat>
+
+         <Stat value="5" >
+            <alias name="Thievery Trained" />
+            <statadd type="trained" Level="1" value="5" charelem="13" />
+         </Stat>
+
+         <Stat value="2" >
+            <alias name="Thievery Misc" />
+            <statadd type="Racial" Level="1" value="2" charelem="14" />
+         </Stat>
+
+         <Stat value="7" >
+            <alias name="Athletics" />
+            <statadd Level="1" value="1" statlink="HALF-LEVEL" charelem="9" />
+            <statadd type="Ability" Level="1" value="1" statlink="Strength" abilmod="true" charelem="9" />
+            <statadd Level="1" value="1" statlink="Athletics Trained" charelem="9" />
+            <statadd Level="1" value="1" statlink="Athletics Misc" charelem="9" />
+            <statadd type="Armor Penalty" Level="1" value="1" statlink="Armor Penalty" charelem="9" />
+         </Stat>
+
+         <Stat value="5" >
+            <alias name="Athletics Trained" />
+            <statadd type="trained" Level="1" value="5" charelem="15" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Athletics Misc" />
+         </Stat>
+
+         <Stat value="10" >
+            <alias name="Passive Perception" />
+            <statadd Level="1" value="1" statlink="Perception" charelem="9" />
+            <statadd Level="1" value="10" charelem="9" />
+         </Stat>
+
+         <Stat value="10" >
+            <alias name="Passive Insight" />
+            <statadd Level="1" value="1" statlink="Insight" charelem="9" />
+            <statadd Level="1" value="10" charelem="9" />
+         </Stat>
+
+         <Stat value="6" >
+            <alias name="Speed" />
+            <statadd Level="1" value="6" charelem="16" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Average Height" />
+            <statadd String="3&apos;6&quot;-4&apos;0&quot;" Level="1" value="0" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Average Weight" />
+            <statadd String="60-75 lb." Level="1" value="0" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Size" />
+            <statadd String="Small" Level="1" value="0" />
+         </Stat>
+
+         <Stat value="2" >
+            <alias name="Language Count" />
+            <statadd Level="1" value="1" charelem="17" />
+            <statadd Level="1" value="1" charelem="18" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="_CLASSNAME" />
+            <statadd String="ID_FMP_CLASS_362" Level="1" value="0" />
+         </Stat>
+
+         <Stat value="5" >
+            <alias name="_PER-LEVEL-HPS" />
+            <statadd Level="1" value="5" charelem="8" />
+         </Stat>
+
+         <Stat value="1" >
+            <alias name="_WeaponsAsImplements" />
+            <statadd Level="1" value="1" charelem="8" />
+         </Stat>
+
+         <Stat value="1" >
+            <alias name="Stone Fist" />
+            <statadd Level="1" value="1" charelem="7" />
+            <statadd Level="1" requires="Paragon Tier" value="1" charelem="7" />
+            <statadd Level="1" requires="Epic Tier" value="1" charelem="7" />
+         </Stat>
+
+         <Stat value="2" >
+            <alias name="Unarmored Defense" />
+            <statadd Level="1" not-wearing="armor:" value="2" charelem="5" />
+            <statadd Level="1" wearing="armor:cloth" not-wearing="armor:shield" value="2" charelem="5" />
+         </Stat>
+
+         <Stat value="0" >
+            <alias name="Weight" />
+            <statadd value="0" />
+         </Stat>
+
+      </StatBlock>
+
+      <!--
+         The list of all rules elements the character has, after taking into
+         account retraining, multiclass power swapping, etc.
+      -->
+      <RulesElementTally>
+         <RulesElement name="1" type="Level" internal-id="ID_INTERNAL_LEVEL_1" charelem="3" legality="rules-legal" >
+            <specific name="XP Needed" > 1000 </specific>
+         </RulesElement>
+         <RulesElement name="Level1Rules" type="Level1Rules" internal-id="ID_INTERNAL_LEVEL1RULES_LEVEL1RULES" charelem="19" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="SkillRules" type="Level1Rules" internal-id="ID_INTERNAL_LEVEL1RULES_SKILLRULES" charelem="9" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Acrobatics" type="Skill" internal-id="ID_FMP_SKILL_1" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=1" charelem="20" legality="rules-legal" >
+            <specific name="Key Ability" > Dexterity </specific>
+         Creatures typically use the Acrobatics skill to maintain their balance while walking on narrow or unstable surfaces, to slip free of a grab or restraints, and to take less damage from a fall.	Moving across a surface that is slippery doesn&apos;t usually require an Acrobatics check; that surface is instead treated as difficult terrain. If a surface is extremely slippery, the DM might require an Acrobatics check to cross it.
+         </RulesElement>
+         <RulesElement name="Arcana" type="Skill" internal-id="ID_FMP_SKILL_2" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=2" charelem="21" legality="rules-legal" >
+            <specific name="Key Ability" > Intelligence </specific>
+         The Arcana skill encompasses knowledge about magic-related lore and magical effects. Training in this skill represents academic study, either formalized or as a hobby. This knowledge can touch on any source of magical power—whether arcane, divine, primal, or another one—and extends to information about the following planes of existence, including the creatures native to those planes: the Elemental Chaos, the Feywild, and the Shadowfell. Those that have training in Arcana also have a chance to know something about the mysterious Far Realm, but not about its creatures (such knowledge falls under the Dungeoneering skill). A creature can sometimes use its knowledge of magic to interact with or manipulate magical phenomena.
+         </RulesElement>
+         <RulesElement name="Bluff" type="Skill" internal-id="ID_FMP_SKILL_3" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=3" charelem="22" legality="rules-legal" >
+            <specific name="Key Ability" > Charisma </specific>
+         Characters use the Bluff skill to make what&apos;s false seem true, what&apos;s outrageous seem plausible, and what&apos;s suspicious seem ordinary. A character makes a Bluff check to fast-talk a guard, con a merchant, gamble, pass off a disguise, fake a piece of documentation, or mislead in some other way.
+         </RulesElement>
+         <RulesElement name="Diplomacy" type="Skill" internal-id="ID_FMP_SKILL_6" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=6" charelem="23" legality="rules-legal" >
+            <specific name="Key Ability" > Charisma </specific>
+         Creatures use the Diplomacy skill to influence others using tact, subtlety, and social grace. (Monsters rarely make Diplomacy checks.) Make a  diplomacy check to change opinions, inspire good will, haggle with a merchant, demonstrate proper etiquette and decorum, or negotiate a deal in good faith.
+         </RulesElement>
+         <RulesElement name="Dungeoneering" type="Skill" internal-id="ID_FMP_SKILL_7" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=7" charelem="24" legality="rules-legal" >
+            <specific name="Key Ability" > Wisdom </specific>
+         The Dungeoneering skill represents knowledge and skills related to dungeon exploration, including finding one&apos;s way through underground complexes, navigating winding caverns, recognizing subterranean hazards, and foraging for food in the Underdark.	Training in this skill represents formalized study or extensive experience. Those that have training in the skill can also identify creatures of the Far Realm.
+         </RulesElement>
+         <RulesElement name="Endurance" type="Skill" internal-id="ID_FMP_SKILL_8" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=8" charelem="25" legality="rules-legal" >
+            <specific name="Key Ability" > Constitution </specific>
+         The Endurance skill is used to stave off ill effects and to push beyond normal physical limits. A creature that has training in Endurance can hold its breath for long periods of time, forestall the debilitating effects of hunger and thirst, and swim or tread water for extended periods. Some hazards—including extreme temperatures, violent weather, and diseases—require creatures to make Endurance checks to resist or delay debilitating effects.	Characters rarely use Endurance actively; the DM directs players to use it in response to certain hazards. Using the skill in that way requires no action, unless otherwise noted. See “Environmental Dangers” and “Disease” for some of the situations that require Endurance checks.
+         </RulesElement>
+         <RulesElement name="Heal" type="Skill" internal-id="ID_FMP_SKILL_9" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=9" charelem="26" legality="rules-legal" >
+            <specific name="Key Ability" > Wisdom </specific>
+         The Heal skill is used to help others recover from wounds or debilitating conditions, including disease.
+         </RulesElement>
+         <RulesElement name="History" type="Skill" internal-id="ID_FMP_SKILL_11" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=11" charelem="27" legality="rules-legal" >
+            <specific name="Key Ability" > Intelligence </specific>
+         The History skill encompasses knowledge related to the history of a region and beyond, including the chronological record of significant events and an explanation of their causes. This knowledge includes information pertaining to royalty and other leaders, wars, legends, important personalities, laws, customs, traditions, and memorable events.	Training in this skill represents academic study, either formalized or as a hobby. Those that have training in the skill are likely to know esoteric historical information.	Make a History check to remember a relevant piece of historical lore or to recognize a historical clue (see “Knowledge Checks”).
+         </RulesElement>
+         <RulesElement name="Insight" type="Skill" internal-id="ID_FMP_SKILL_13" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=13" charelem="28" legality="rules-legal" >
+            <specific name="Key Ability" > Wisdom </specific>
+         The Insight skill is used to discern intent and decipher body language during social interactions. Characters use the skill to comprehend motives, to read between the lines, to get a sense of moods and attitudes, and to determine how truthful someone is being. (Monsters rarely use Insight.)	Insight is used to oppose Bluff checks and as the social counterpart to the Perception skill. The skill can also be used to gain clues, to figure out how well a social situation is going, and to determine if someone is under the influence of an outside force.	When a creature uses Insight, it is making a best guess about another creature&apos;s motives and truthfulness. Insight is not an exact science or a supernatural power; it represents the ability to get a sense of how a person is behaving.
+         </RulesElement>
+         <RulesElement name="Intimidate" type="Skill" internal-id="ID_FMP_SKILL_14" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=14" charelem="29" legality="rules-legal" >
+            <specific name="Key Ability" > Charisma </specific>
+         An adventurer can make an Intimidate check to influence others through hostile actions, overt threats, or deadly persuasion. (Monsters can&apos;t intimidate adventurers.)
+         </RulesElement>
+         <RulesElement name="Nature" type="Skill" internal-id="ID_FMP_SKILL_16" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=16" charelem="30" legality="rules-legal" >
+            <specific name="Key Ability" > Wisdom </specific>
+         The Nature skill encompasses knowledge and skills related to nature, including finding ways through wilderness, recognizing natural hazards, dealing with and identifying natural creatures, and living off the land. 	Training in this skill represents formalized study or extensive experience. Those that have training in the skill are likely to know esoteric information in the field of study.
+         </RulesElement>
+         <RulesElement name="Perception" type="Skill" internal-id="ID_FMP_SKILL_17" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=17" charelem="31" legality="rules-legal" >
+            <specific name="Key Ability" > Wisdom </specific>
+         The Perception skill encompasses perceiving things, most often by sight or sound. Make a Perception check to notice a clue, detect a secret door, find a trap, follow tracks, listen for sounds behind a closed door, or locate a hidden object.	In most situations, the DM uses passive Perception to determine if a creature notices things. A creature that has fallen asleep naturally (as opposed to being knocked unconscious by a power or other effect) is unconscious, but not totally deprived of awareness; it can use its passive Perception to hear things, but with a -5 penalty.
+         </RulesElement>
+         <RulesElement name="Religion" type="Skill" internal-id="ID_FMP_SKILL_18" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=18" charelem="32" legality="rules-legal" >
+            <specific name="Key Ability" > Intelligence </specific>
+         The Religion skill encompasses knowledge about gods, sacred writings, religious ceremonies, holy symbols, and theology. This knowledge extends to information about the undead and about the Astral Sea, including the creatures of that plane.	Training in this skill represents academic study, either formalized or as a hobby. Those that have training in the skill are likely to know esoteric information in the field of study.
+         </RulesElement>
+         <RulesElement name="Stealth" type="Skill" internal-id="ID_FMP_SKILL_20" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=20" charelem="33" legality="rules-legal" >
+            <specific name="Key Ability" > Dexterity </specific>
+         Creatures use the Stealth skill to conceal themselves from enemies, slink past guards, slip away without being noticed, and sneak up on others without being detected.
+         </RulesElement>
+         <RulesElement name="Streetwise" type="Skill" internal-id="ID_FMP_SKILL_21" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=21" charelem="34" legality="rules-legal" >
+            <specific name="Key Ability" > Charisma </specific>
+         The Streetwise skill encompasses knowledge of the ins and outs of life in a settlement (a village, a town, or a city), whether on its main streets or in its back alleys. This knowledge is gleaned from talking to people and observing them as they go about their lives, rather than from studying tomes or maps. A character who has training in this skill is especially adept at getting information out of people living in settlements.	When in a settlement, make a Streetwise check to find out what&apos;s going on, who the movers and shakers are, where to get the best deals, and where the dangers are.
+         </RulesElement>
+         <RulesElement name="Thievery" type="Skill" internal-id="ID_FMP_SKILL_23" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=23" charelem="35" legality="rules-legal" >
+            <specific name="Key Ability" > Dexterity </specific>
+         The Thievery skill encompasses various abilities that require nerves of steel and a steady hand: disabling traps, opening locks, picking pockets, and sleight of hand.	The DM might decide that some uses of this skill are so specialized that a creature is required to have training in Thievery to have a chance of succeeding.
+         </RulesElement>
+         <RulesElement name="Athletics" type="Skill" internal-id="ID_FMP_SKILL_27" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=27" charelem="36" legality="rules-legal" >
+            <specific name="Key Ability" > Strength </specific>
+         Make an Athletics check to attempt physical activities that rely on muscular strength, including climbing, escaping from a grab, jumping, and swimming.
+         </RulesElement>
+         <RulesElement name="Heroic" type="Tier" internal-id="ID_INTERNAL_TIER_HEROIC" charelem="37" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Melee Basic Attack" type="Power" internal-id="ID_INTERNAL_POWER_MELEE_BASIC_ATTACK" charelem="38" legality="rules-legal" >
+            <specific name="Flavor" > You resort to the simple attack you learned when you first picked up a melee weapon. </specific>
+            <specific name="Power Usage" > At-Will </specific>
+            <specific name="Display" > Basic Attack </specific>
+            <specific name="Keywords" > Weapon </specific>
+            <specific name="Action Type" > Standard Action </specific>
+            <specific name="Attack Type" > Melee weapon </specific>
+            <specific name="Target" > One creature </specific>
+            <specific name="Attack" > Strength vs. AC </specific>
+            <specific name="Hit" > 1[W] + Strength modifier damage. </specific>
+            <specific name="	Level 21" > 2[W] + Strength modifier damage. </specific>
+         </RulesElement>
+         <RulesElement name="Ranged Basic Attack" type="Power" internal-id="ID_INTERNAL_POWER_RANGED_BASIC_ATTACK" charelem="39" legality="rules-legal" >
+            <specific name="Flavor" > You resort to the simple attack you learned when you first picked up a ranged weapon. </specific>
+            <specific name="Power Usage" > At-Will </specific>
+            <specific name="Display" > Basic Attack </specific>
+            <specific name="Keywords" > Weapon </specific>
+            <specific name="Action Type" > Standard Action </specific>
+            <specific name="Attack Type" > Ranged weapon </specific>
+            <specific name="Target" > One creature </specific>
+            <specific name="Attack" > Dexterity vs. AC </specific>
+            <specific name="Hit" > 1[W] + Dexterity modifier damage. </specific>
+            <specific name="	Level 21" > 2[W] + Dexterity modifier damage. </specific>
+         </RulesElement>
+         <RulesElement name="DetailsRules" type="Level1Rules" internal-id="ID_INTERNAL_LEVEL1RULES_DETAILSRULES" charelem="40" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="male" type="Gender" internal-id="ID_INTERNAL_GENDER_MALE" charelem="41" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Unaligned" type="Alignment" internal-id="ID_FMP_ALIGNMENT_1" charelem="42" legality="rules-legal" >
+         Unaligned creatures don&apos;t actively seek to harm others or wish them ill. But such creatures also don&apos;t go out of their way to put themselves at risk without some hope for reward. They support law and order when doing so benefits them. They value their own freedom, without worrying too much about protecting the freedom of others.	A few unaligned people, and most unaligned deities, aren&apos;t undecided about alignment. Rather, they&apos;ve chosen not to choose, either because they see the benefits of both good and evil or because they see themselves as above the concerns of morality. The Raven Queen and her devotees fall into the latter camp, believing that moral choices are irrelevant to their mission, since death comes to all creatures regardless of alignment.
+         </RulesElement>
+         <RulesElement name="Expansion1" type="Level1Rules" internal-id="ID_INTERNAL_LEVEL1RULES_EXPANSION1" charelem="43" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Background Benefit" type="Internal" internal-id="ID_INTERNAL_INTERNAL_BACKGROUND_BENEFIT" charelem="44" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Expansion2" type="Level1Rules" internal-id="ID_INTERNAL_LEVEL1RULES_EXPANSION2" charelem="45" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Expansion3" type="Level1Rules" internal-id="ID_INTERNAL_LEVEL1RULES_EXPANSION3" charelem="46" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Expansion4" type="Level1Rules" internal-id="ID_INTERNAL_LEVEL1RULES_EXPANSION4" charelem="47" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Expansion5" type="Level1Rules" internal-id="ID_INTERNAL_LEVEL1RULES_EXPANSION5" charelem="48" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Kobold" type="Race" internal-id="ID_FMP_RACE_23" url="http://www.wizards.com/dndinsider/compendium/race.aspx?id=23" charelem="16" legality="rules-legal" >
+            <specific name="Flavor" > Reptilian tunnel dwellers who stick together to survive </specific>
+            <specific name="Size" > Small </specific>
+            <specific name="Speed" > 6 squares </specific>
+            <specific name="Characteristics" > Ambitious, cooperative, fawning, greedy, loyal, obedient, quick, timid </specific>
+            <specific name="Physical Qualities" > Their spare frames and stooped postures don&apos;t inspire fear in others, which suits kobolds just fine. They would rather look nonthreatening but not quite vulnerable. A few brave kobolds emulate their honored dragons. They put on a little muscle, raise their snouts high, and roar with a ferocity no one would expect such weak-looking creatures to muster.	Kobolds&apos; long muzzles are lined with tiny teeth and lolling tongues similar to those of a dragon or crocodile. Their slitted eyes are usually red, gold, or yellow. Small horns angle backward from a kobold&apos;s brow, and bony barbs stud its forearms to its elbows. Its fingers end in stubby talons, as do its long toes. Fine scales cover a kobold&apos;s body, usually some shade of green. Brown, red, and orange scales appear among particular tribes, as do mottled hides of several colors.	Their reptilian anatomy hides kobolds&apos; physical expressiveness from other races. Their facial construction lacks the anatomy to display the same range of emotions as other humanoids. Kobolds who need to deal with warmbloods develop broad arm and head gestures to convey how they feel.	Since kobolds have to make do with what they scavenge, clothing is limited and functional. A loincloth serves the least among them, while warriors cobble together armor from scraps they harvest from the dead. Crude weaponry suffices until they can steal something better.	Kobolds grow quickly. They can walk and talk within hours after hatching and reach their full height after about a year. Kobolds can live longer than a century, though very few make it through their first decade. </specific>
+            <specific name="Playing" > Kobolds overrun dungeons and caverns, relying on vast numbers and wicked traps to make up for their deficiencies in size and strength. Their ability to survive among the bigger and tougher monsters of the world shows just how well their tactics have worked.	Kobolds gather in large tribes, reproducing quickly to replenish their numbers. Group pressure and the dictates of charismatic leaders compel all members in the community to work together toward whatever ends they need to survive. No matter what an individual kobold feels or believes, the community expects obedience, and every kobold in the tribe tries to behave in the expected way. Some kobolds have good hearts, but their chieftains believe only ruthlessness will keep the tribe strong. Thus most kobold tribes commit evil acts, or at least self-serving ones.	Kobolds have few illusions about their place in the world. They are scavengers and thieves. They do not grow their own food and would rather deprive others of their goods than craft anything. They lurk on civilization&apos;s fringes, raiding farmsteads and ambushing caravans. They settle in old ruins and dungeons, choosing places they can readily defend and fortify. Even with their great numbers, kobolds know they cannot hope to protect themselves against a determined attacker. For this reason, most tribes raise monstrous allies for added muscle or give in and become servants of dungeon rulers.	Of all the monstrous allies kobolds can make, dragons are best of all. Dragons are everything kobolds are not: enormous, majestic, and powerful. They are gods to the kobolds, their idealized selves, and thus are worthy of worship and service—should any dragon accept the little creatures. Any sign of a dragon sends the tribe into a flurry of activity. The kobolds track it to its lair and present it with sacrifices, pageants, and anything else they think it would like. Of course, a dragon presented with so many willing victims indulges its appetite and gobbles up as many as it can. But death by dragon is no deterrent to the kobolds&apos; efforts. They see being eaten by a god as a great honor, and clamor for their chance to climb into the dragon&apos;s maw.	Older dragons see kobolds as nuisances. A quick blast of a breath weapon suffices to eliminate an infestation. The trouble for the dragon is that the kobolds do not give up and might try to serve in secret even if rejected. Younger dragons, however, might see the advantage in a loyal clan of guards and attendants to protect their hoards and warn of adventurers who come calling. Once a kobold tribe installs itself around a dragon, everything they do serves their god.	A kobold&apos;s life is unpleasant to say the least. Very few kobolds live to reach old age. Attrition claims most before they get too far into adulthood. Hunger, thirst, and want are constant companions, and even the dimmest kobolds learn to watch their backs. Kobolds are subject to the same greed as dragons, though far less intense. Most of them keep small stashes of coins or other treasure secret from the tribe, even though they know they&apos;re duty-bound to pool such resources.	Kobolds understand that they are stronger together than they are apart. All grudges are forgotten when the tribe faces an outside threat. Kobolds demonstrate surprising cunning when dealing with intruders, as evident in the traps they design to level the playing field. Kobolds&apos; skill in trapmaking is amazing. With only minimal supplies—mostly junk—they can fashion crafty snares and clever alarms. Even intrepid explorers know that entering a kobold warren invites disfigurement and death.	The harsh reality of kobold existence demands absolute obedience to the leader&apos;s demands. Kobolds who lack the killer&apos;s instinct, show any weakness, or disobey orders are shunned and driven to the tribe&apos;s periphery. If not devoured by a passing predator or sacrificed to a bloodthirsty god, such exiles might seek their fortunes beyond the tribe. Survival is by no means assured, but such action at least gives them a chance to survive.	Kobolds are survivors first. They are not above prostrating themselves before enemies if it means buying a little time. A lone kobold survivor after a raid, a prisoner, or one otherwise cut off from its fellows must adapt to avoid death. A kobold who was part of an evil tribe might reform its behavior in the presence of others who are willing to guide and support it, and might even find this new “tribe” more comforting than the old one. Such individuals find the adventurer&apos;s life suits them—not because they crave danger or excitement, but because their talents make them useful to other adventurers who protect them in return. </specific>
+            <specific name="Vision" > Darkvision </specific>
+            <specific name="Average Height" > 3&apos;6&quot;-4&apos;0&quot; </specific>
+            <specific name="Average Weight" > 60-75 lb. </specific>
+            <specific name="Ability Scores" > +2 Constitution, +2 Charisma or +2 Dexterity </specific>
+            <specific name="Languages" > Common, Draconic </specific>
+            <specific name="Skill Bonuses" > +2 Dungeoneering, +2 Thievery </specific>
+            <specific name="Short Description" > Kobolds revere dragons, and the small reptilian creatures are masters of traps and ambushes. </specific>
+            <specific name="Male Names" > Bont, Dartak, Deekin, Forgen, Kol, Meepo, Nin, Speelok, Zeem </specific>
+            <specific name="Female Names" > Capax, Eenith, Foruul, Gumba, Iimen, Lorpe, Rowatak </specific>
+            <specific name="Racial Traits" > ID_FMP_RACIAL_TRAIT_416, ID_FMP_RACIAL_TRAIT_717, ID_FMP_RACIAL_TRAIT_4493 </specific>
+         Adventuring might seem an unlikely occupation for kobolds, but they have several talents that make them well-suited to the life. They can see in the dark, anticipate and avoid traps, and stay a step ahead of their enemies. Kobolds can be useful and effective allies in almost any adventuring group.	Very few kobolds become adventurers by choice, however. Some catastrophe must befall them before they traipse off looking for danger. Most take up this life after being captured by adventurers or separated from their tribes.
+
+Play a Kobold if you want ...
+         </RulesElement>
+         <RulesElement name="Kobold" type="Grants" internal-id="ID_INTERNAL_GRANTS_KOBOLD" charelem="49" legality="rules-legal" >
+            <specific name="_SupportsID" > ID_FMP_RACE_23 </specific>
+         </RulesElement>
+         <RulesElement name="Small" type="Size" internal-id="ID_INTERNAL_SIZE_SMALL" charelem="50" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Small Weapons" type="Internal" internal-id="ID_INTERNAL_INTERNAL_SMALL_WEAPONS" charelem="51" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Darkvision" type="Vision" internal-id="ID_INTERNAL_VISION_DARKVISION" charelem="52" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Shifty Maneuver" type="Racial Trait" internal-id="ID_FMP_RACIAL_TRAIT_416" charelem="53" legality="rules-legal" >
+            <specific name="Short Description" > Use shifty maneuver as an at-will power </specific>
+            <specific name="Level" > 1 </specific>
+            <specific name="Powers" > ID_FMP_POWER_2479 </specific>
+            <specific name="Type" > Utility </specific>
+            <specific name="Class" > ID_FMP_RACE_23 </specific>
+            <specific name="_DisplayPowers" > ID_FMP_POWER_2479 </specific>
+         You have the shifty maneuver power.
+         </RulesElement>
+         <RulesElement name="Shifty Maneuver" type="Power" internal-id="ID_FMP_POWER_2479" url="http://www.wizards.com/dndinsider/compendium/power.aspx?id=2479" charelem="54" legality="rules-legal" >
+            <specific name="Flavor" > You call on your natural ability to dodge danger, taking your tribemates along for the ride. </specific>
+            <specific name="Power Usage" > Encounter </specific>
+            <specific name="Display" > Kobold Utility </specific>
+            <specific name="Keywords" />
+            <specific name="Action Type" > Move Action </specific>
+            <specific name="Attack Type" > Close burst 2 </specific>
+            <specific name="Target" > You and each ally in the burst </specific>
+            <specific name="Effect" > Each target can shift 1 square as a free action. </specific>
+            <specific name="Class" > ID_FMP_RACE_23 </specific>
+            <specific name="Level" />
+            <specific name="Power Type" > Utility </specific>
+            <specific name="_ParentFeature" > ID_FMP_RACIAL_TRAIT_416 </specific>
+         </RulesElement>
+         <RulesElement name="Trap Sense" type="Racial Trait" internal-id="ID_FMP_RACIAL_TRAIT_717" charelem="4" legality="rules-legal" >
+            <specific name="Short Description" > +2 racial bonus to defenses against traps </specific>
+            <specific name="Level" > 1 </specific>
+            <specific name="Class" > ID_FMP_RACE_23 </specific>
+         You gain a +2 racial bonus to all defenses against attacks from traps.
+         </RulesElement>
+         <RulesElement name="Reptile" type="Racial Trait" internal-id="ID_FMP_RACIAL_TRAIT_4493" charelem="55" legality="rules-legal" >
+            <specific name="Short Description" > You are a reptile </specific>
+            <specific name="Level" > 1 </specific>
+            <specific name="Class" > ID_FMP_RACE_23 </specific>
+         You are considered a reptile for the purpose of effects that relate to the reptile keyword.
+         </RulesElement>
+         <RulesElement name="Constitution" type="Race Ability Bonus" internal-id="ID_INTERNAL_RACE_ABILITY_BONUS_CONSTITUTION" charelem="1" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Common" type="Language" internal-id="ID_FMP_LANGUAGE_1" charelem="17" legality="rules-legal" >
+         Common is a debased form of Supernal, in the way that humans and halflings heard the first language.
+         </RulesElement>
+         <RulesElement name="Draconic" type="Language" internal-id="ID_FMP_LANGUAGE_2" charelem="18" legality="rules-legal" >
+         Draconic is a debased form of Supernal, in the way that dragons heard the first language.
+         </RulesElement>
+         <RulesElement name="Dungeoneering Bonus" type="Racial Trait" internal-id="ID_INTERNAL_RACIAL_TRAIT_DUNGEONEERING_BONUS" charelem="11" legality="rules-legal" >
+            <specific name="_CS_ShortDescription" > @ </specific>
+         Gain a +2 racial bonus to Dungeoneering.
+         </RulesElement>
+         <RulesElement name="Thievery Bonus" type="Racial Trait" internal-id="ID_INTERNAL_RACIAL_TRAIT_THIEVERY_BONUS" charelem="14" legality="rules-legal" >
+            <specific name="_CS_ShortDescription" > @ </specific>
+         Gain a +2 racial bonus to Thievery.
+         </RulesElement>
+         <RulesElement name="Dexterity" type="Race Ability Bonus" internal-id="ID_INTERNAL_RACE_ABILITY_BONUS_DEXTERITY" charelem="2" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Monk" type="Class" internal-id="ID_FMP_CLASS_362" url="http://www.wizards.com/dndinsider/compendium/class.aspx?id=362" charelem="8" legality="rules-legal" >
+            <specific name="Flavor" > “You fight well, but without discipline and focus, you will fall.” </specific>
+            <specific name="Key Abilities" > Dexterity, Strength, Wisdom </specific>
+            <specific name="Implements" > Ki focuses, weapons with which you&apos;re proficient </specific>
+            <specific name="Armor Proficiencies" > Cloth </specific>
+            <specific name="Weapon Proficiencies" > Club, dagger, monk unarmed strike, quarterstaff, shuriken, sling, spear </specific>
+            <specific name="Bonus to Defense" > +1 Fortitude, +1 Reflex, +1 Will </specific>
+            <specific name="Hit Points at 1st Level" > 12+ Constitution Score </specific>
+            <specific name="Hit Points per Level Gained" > 5 </specific>
+            <specific name="Healing Surges" > 7+ Constitution Modifier </specific>
+            <specific name="Trained Skills" > From the class skills list below, choose 4 trained skills at 1st level. </specific>
+            <specific name="Class Skills" > Acrobatics (Dex), Athletics (Str), Diplomacy (Cha), Endurance (Con), Heal (Wis), Insight (Wis), Perception (Wis), Religion (Int), Stealth (Dex), Thievery (Dex) </specific>
+            <specific name="Build Options" > Centered Breath Monk, Iron Soul Monk, Stone Fist Monk </specific>
+            <specific name="_PARSED_CLASS_FEATURE" > Monastic Tradition, Unarmed Combatant, Unarmored Defense </specific>
+            <specific name="Role" > Striker. You typically eschew weapons in favor of unarmed attacks, and you avoid armor in favor of maneuverability and agility. Few can match your speed and poise on the battlefield. Your powers are more than simple attacks; they are complex forms that allow you to strike and move with unmatched grace. You lean toward controller as a secondary role. </specific>
+            <specific name="Power Source" > Psionic. Your intense focus, constant training, and exceptional talent combine to allow you to harness the psionic power within yourself. </specific>
+            <specific name="Creating" > You can choose any powers you like for your monk, though your choice of Monastic Tradition is likely to influence some of your choices. Dexterity is the most important ability for monks, since all monk attacks rely on it. Depending on your Monastic Tradition, you might favor Wisdom or Strength as your second ability score. </specific>
+            <specific name="Supplemental" > Full DisciplineMany monk powers have the full discipline keyword. A full discipline power gives you two or more actions to choose from, usually an attack technique and a movement technique. Attack techniques usually require a standard action, and movement techniques are options for your move actions. For a monk, a full discipline power represents a fighting style, a unique combination of a move and an attack.You can use only one full discipline power per round. However, if you spend an action point to take an extra action, you can switch to a different full discipline power. You can use the techniques of a full discipline power in whatever order you like, and you can choose to use one of the techniques and not the other during a particular round.The number of times you can use a full discipline power&apos;s techniques during a round is determined by the power&apos;s type—at-will or encounter—and by the actions you have available that round. For example, you can use the techniques of an at-will full discipline power as many times during a round as you like, provided you have enough of the required actions, but you can use the techniques of an encounter full discipline power once during a round. </specific>
+            <specific name="Implement" > Monks usually channel their psionic energy through an item called a ki focus, which is a wooden practice weapon, prayer beads, a manual of lore, or some other object a monk studies or uses during training or meditation. After you attune yourself to a ki focus, you can use it as an implement when it is on your person (see the “Ki Focuses” sidebar).When you wear or hold your ki focus, you can add its enhancement bonus to the attack rolls and the damage rolls of monk powers and monk paragon path powers that have the implement keyword. You can also add its enhancement bonus to the attack rolls and the damage rolls of weapon attacks you make using a weapon with which you&apos;re proficient.You can also use a weapon with which you&apos;re proficient as an implement. When wielding the weapon as an implement, the weapon&apos;s characteristics—proficiency bonus, damage die, and weapon properties like defensive or high crit—are irrelevant to your implement powers.If you have both a magic ki focus and a magic weapon, you choose before you use an attack power whether to draw on the magic of the ki focus or the weapon. Your choice determines which enhancement bonus, critical hit effects, and magic item properties and powers you can apply to that power. You can&apos;t, for example, use the enhancement bonus of your ki focus and the critical hit effect of your magic weapon with the same attack. </specific>
+            <specific name="Powers" > Your monk powers are called disciplines. They rely on your physical training, mental focus, and mastery of psionic magic to function. </specific>
+            <specific name="Power Name" > Disciplines </specific>
+            <specific name="_RoleElement" > ID_FMP_ROLE_3 </specific>
+            <specific name="_PowerSourceElement" > ID_FMP_POWER_SOURCE_5 </specific>
+            <specific name="Short Description" > Channeling psionic energy within yourself, you fortify your body and sharpen your mind. </specific>
+         From high in forbidding mountains to the alleys of a city&apos;s meanest district, the ascetic warriors known as monks practice their art. By focusing on their minds and bodies, honing both to near perfection, they master a psionic fighting art that allows them to deliver a punch with the force of a giant&apos;s club and to absorb attacks as easily as a heavily armored knight. Monks tap into the psionic potential that rests within themselves, turning that energy further inward to fortify their bodies and sharpen their minds.Perhaps you set out on this path to put a dark past behind you. Or your village was victimized one time too many by an evil lord or marauding beasts, and you now seek justice. No matter what your motivation, the path of the monk transforms you into a living weapon.The road opens wide before you. With little more than a walking stick and perhaps a satchel of food, you are ready to take on whatever the world can throw at you. Your years of training taught you to turn your eye inward. Now it is time to look outward and test yourself against the world&apos;s dangers.
+         </RulesElement>
+         <RulesElement name="Monk" type="Grants" internal-id="ID_INTERNAL_GRANTS_MONK" charelem="56" legality="rules-legal" >
+            <specific name="_SupportsID" > ID_FMP_CLASS_362 </specific>
+         </RulesElement>
+         <RulesElement name="Striker" type="Role" internal-id="ID_FMP_ROLE_3" charelem="57" legality="rules-legal" >
+         Strikers specialize in dealing very high amounts of damage to a single target at a time. They have the most concentrated offense of any character in the game. Strikers rely on superior mobility, trickery, or magic to move around
+         </RulesElement>
+         <RulesElement name="Psionic" type="Power Source" internal-id="ID_FMP_POWER_SOURCE_5" charelem="58" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Armor Proficiency (Cloth)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_ARMOR_PROFICIENCY_(CLOTH)" charelem="59" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Weapon Proficiency (Club)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_WEAPON_PROFICIENCY_(CLUB)" charelem="60" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Weapon Proficiency (Dagger)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_WEAPON_PROFICIENCY_(DAGGER)" charelem="61" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Weapon Proficiency (Monk unarmed strike)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_WEAPON_PROFICIENCY_(MONK_UNARMED_STRIKE)" charelem="62" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Weapon Proficiency (Quarterstaff)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_WEAPON_PROFICIENCY_(QUARTERSTAFF)" charelem="63" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Weapon Proficiency (Shuriken)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_WEAPON_PROFICIENCY_(SHURIKEN)" charelem="64" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Weapon Proficiency (Sling)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_WEAPON_PROFICIENCY_(SLING)" charelem="65" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Weapon Proficiency (Spear)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_WEAPON_PROFICIENCY_(SPEAR)" charelem="66" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Monastic Tradition" type="Class Feature" internal-id="ID_FMP_CLASS_FEATURE_1543" charelem="67" legality="rules-legal" >
+            <specific name="Short Description" > Choose a Flurry of Blows and become more resilient </specific>
+            <specific name="Level" > 1 </specific>
+            <specific name="_PARSED_SUB_FEATURES" > ID_FMP_CLASS_FEATURE_1544, ID_FMP_CLASS_FEATURE_2360, ID_FMP_CLASS_FEATURE_2952, ID_FMP_CLASS_FEATURE_4331, ID_FMP_CLASS_FEATURE_4332 </specific>
+         Monks train in a number of traditional techniques, with each monastery focusing on a specific style. Choose either Centered Breath or Stone Fist as your tradition. The choice you make grants you a Flurry of Blows power and a defensive benefit.
+         </RulesElement>
+         <RulesElement name="Stone Fist" type="Class Feature" internal-id="ID_FMP_CLASS_FEATURE_2360" charelem="7" legality="rules-legal" >
+            <specific name="Short Description" > Gain Stone Fist Flurry of Blows and Mental Bastion. </specific>
+            <specific name="Level" > 1 </specific>
+            <specific name="Powers" > ID_FMP_POWER_11207 </specific>
+            <specific name="Type" > At-Will </specific>
+            <specific name="Class" > ID_FMP_CLASS_362 </specific>
+            <specific name="_DisplayPowers" > ID_FMP_POWER_11207 </specific>
+         The Stone Fist tradition is one of physical mastery, relentless exercise, and athletic perfection. Its adherents seek to master their bodies, turning themselves into living weapons capable of supernatural feats of strength, agility, and speed. Monks of the Stone Fist prefer to study among the trappings of civilization. Some Stone Fist monasteries are small schools built in towns and villages, where students work as laborers and artisans when they aren&apos;t training. Other Stone Fist monasteries stand in the most forbidding regions of the world—from the bitter cold of the tundra to the edge of a rumbling volcano—to test their students&apos; endurance day after day.	Flurry of Blows: You gain the stone fist flurry of blows power.	Mental Bastion: You gain a +1 bonus to Will. This bonus increases to +2 at 11th level and +3 at 21st level.
+         </RulesElement>
+         <RulesElement name="Stone Fist Flurry of Blows" type="Power" internal-id="ID_FMP_POWER_11207" url="http://www.wizards.com/dndinsider/compendium/power.aspx?id=11207" charelem="68" legality="rules-legal" >
+            <specific name="Flavor" > You lash out at another enemy after your first attack, a casual reminder of your great strength. </specific>
+            <specific name="Power Usage" > At-Will </specific>
+            <specific name="Display" > Monk Feature </specific>
+            <specific name="Keywords" > Psionic </specific>
+            <specific name="Action Type" > No Action </specific>
+            <specific name="Attack Type" > Melee 1 </specific>
+            <specific name="Trigger" > You hit with an attack during your turn </specific>
+            <specific name="Target" > One creatureLevel 11: One or two creaturesLevel 21: Each enemy adjacent to you </specific>
+            <specific name="Effect" > The target takes damage equal to 3 + your Strength modifier. If the target wasn&apos;t targeted by the triggering attack, the damage increases by 2 (4 at 11th level and 6 at 21st level). </specific>
+            <specific name="Special" > You can use this power only once per round. </specific>
+            <specific name="Class" > ID_FMP_CLASS_362 </specific>
+            <specific name="Level" />
+            <specific name="Power Type" > Feature </specific>
+            <specific name="_ParentFeature" > ID_FMP_CLASS_FEATURE_2360,ID_FMP_CLASS_FEATURE_2533 </specific>
+         </RulesElement>
+         <RulesElement name="Unarmed Combatant" type="Class Feature" internal-id="ID_FMP_CLASS_FEATURE_1547" charelem="69" legality="rules-legal" >
+            <specific name="Short Description" > Gain Monk Unarmed Strike +3 attack, 1d8 damage </specific>
+            <specific name="Level" > 1 </specific>
+         You can make unarmed attacks with much greater effectiveness than most combatants can. When you make a weapon attack such as a melee basic attack, you can use the monk unarmed strike, which is a weapon in the unarmed weapon group. This weapon has the off-hand weapon property and a +3 proficiency bonus, and it deals 1d8 damage. You must have a hand free to use your monk unarmed strike, even if you&apos;re kicking, kneeing, elbowing, or head-butting a target. Also, your monk unarmed strike can benefit from a magic ki focus if you have one (see “Implements” below).
+         </RulesElement>
+         <RulesElement name="Monk unarmed strike" type="Weapon" internal-id="ID_INTERNAL_WEAPON_MONK_UNARMED_STRIKE" charelem="70" legality="rules-legal" >
+            <specific name="InternalOnly" > 1 </specific>
+            <specific name="Weight" > 0 </specific>
+            <specific name="Gold" > 0 </specific>
+            <specific name="Range" />
+            <specific name="Damage" > 1d8 </specific>
+            <specific name="Proficiency Bonus" > 3 </specific>
+            <specific name="Weapon Category" > Improvised Melee </specific>
+            <specific name="Hands Required" > One-Handed </specific>
+            <specific name="Item Slot" > Off-Hand </specific>
+            <specific name="Group" > Unarmed </specific>
+            <specific name="Properties" > Off-Hand </specific>
+            <specific name="_IncludeImprovised" > 1 </specific>
+            <specific name="_SupportsID" > ID_FMP_CLASS_362 </specific>
+         You can make unarmed attacks with much greater effectiveness than most combatants. When you make a weapon attack such as a melee basic attack, you can use the monk unarmed strike, which is a weapon in the unarmed weapon group. This weapon has the off-hand weapon property and a +3 proficiency bonus, and it deals 1d8 damage. You must have a hand free to use your monk unarmed strike, even if you&apos;re kicking, kneeing, elbowing, or head-butting a target. Also, your monk unarmed strike can benefit from a magic ki focus if you have one.
+
+    *UPDATE* The rules for monk unarmed strikes has changed since the playtest. Your unarmed strike no longer can be enchanted, nor does it function as an implement. Talk with your DM about updating your character. A suggested resolution is to sell your enchanted unarmed strike and then purchase a Ki Focus in its place.
+         </RulesElement>
+         <RulesElement name="Unarmored Defense" type="Class Feature" internal-id="ID_FMP_CLASS_FEATURE_1548" charelem="5" legality="rules-legal" >
+            <specific name="Short Description" > +2 AC in cloth or no armor </specific>
+            <specific name="Level" > 1 </specific>
+         While you are wearing cloth armor or no armor and aren&apos;t using a shield, you gain a +2 bonus to AC.
+         </RulesElement>
+         <RulesElement name="Monk Implements" type="Grants" internal-id="ID_INTERNAL_GRANTS_MONK_IMPLEMENTS" charelem="71" legality="rules-legal" >
+            <specific name="_SupportsID" > ID_FMP_CLASS_362 </specific>
+         </RulesElement>
+         <RulesElement name="Implement Proficiency (Ki Focuses)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(KI_FOCUSES)" charelem="72" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Implement Proficiency (Proficient Weapons)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(PROFICIENT_WEAPONS)" charelem="73" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Five Storms" type="Power" internal-id="ID_FMP_POWER_7452" url="http://www.wizards.com/dndinsider/compendium/power.aspx?id=7452" charelem="74" legality="rules-legal" >
+            <specific name="Flavor" > You move like a whirlwind, spinning as you unleash an array of kicks and punches, which slam into your foes like a storm crashing onto the shore. </specific>
+            <specific name="Power Usage" > At-Will </specific>
+            <specific name="_ChildPower" > ID_FMP_POWER_7515 </specific>
+            <specific name="Display" > Monk Attack 1 </specific>
+            <specific name="Keywords" > Full Discipline, Implement, Psionic </specific>
+            <specific name="Action Type" > Standard Action </specific>
+            <specific name="Attack Type" > Close burst 1 </specific>
+            <specific name="Target" > Each enemy you can see in the burst </specific>
+            <specific name="Attack" > Dexterity vs. Reflex </specific>
+            <specific name="Hit" > 1d8 + Dexterity modifier damage.Level 21: 2d8 + Dexterity modifier damage. </specific>
+            <specific name="Class" > ID_FMP_CLASS_362 </specific>
+            <specific name="Level" > 1 </specific>
+            <specific name="Power Type" > Attack </specific>
+         </RulesElement>
+         <RulesElement name="Five Storms [Movement Technique]" type="Power" internal-id="ID_FMP_POWER_7515" url="http://www.wizards.com/dndinsider/compendium/power.aspx?id=7515" charelem="75" legality="rules-legal" >
+            <specific name="Flavor" > You move like a whirlwind, spinning as you unleash an array of kicks and punches, which slam into your foes like a storm crashing onto the shore. </specific>
+            <specific name="Power Usage" > At-Will </specific>
+            <specific name="Display" />
+            <specific name="Keywords" > Full Discipline, Psionic </specific>
+            <specific name="Action Type" > Move Action </specific>
+            <specific name="Attack Type" > Personal </specific>
+            <specific name="Effect" > You shift 2 squares. </specific>
+            <specific name="_ParentPower" > ID_FMP_POWER_7452 </specific>
+            <specific name="Class" > ID_FMP_CLASS_362 </specific>
+         </RulesElement>
+         <RulesElement name="Dragon&apos;s Tail" type="Power" internal-id="ID_FMP_POWER_7450" url="http://www.wizards.com/dndinsider/compendium/power.aspx?id=7450" charelem="76" legality="rules-legal" >
+            <specific name="Flavor" > Your hand lashes out like a dragon&apos;s tail, and with the lightest touch unleashes power that knocks your foe to the ground. </specific>
+            <specific name="Power Usage" > At-Will </specific>
+            <specific name="_ChildPower" > ID_FMP_POWER_7513 </specific>
+            <specific name="Display" > Monk Attack 1 </specific>
+            <specific name="Keywords" > Full Discipline, Implement, Psionic </specific>
+            <specific name="Action Type" > Standard Action </specific>
+            <specific name="Attack Type" > Melee touch </specific>
+            <specific name="Target" > One creature </specific>
+            <specific name="Attack" > Dexterity vs. Fortitude </specific>
+            <specific name="Hit" > 1d6 + Dexterity modifier damage, and you knock the target prone.Level 21: 2d6 + Dexterity modifier damage. </specific>
+            <specific name="Class" > ID_FMP_CLASS_362 </specific>
+            <specific name="Level" > 1 </specific>
+            <specific name="Power Type" > Attack </specific>
+         </RulesElement>
+         <RulesElement name="Dragon&apos;s Tail [Movement Technique]" type="Power" internal-id="ID_FMP_POWER_7513" url="http://www.wizards.com/dndinsider/compendium/power.aspx?id=7513" charelem="77" legality="rules-legal" >
+            <specific name="Flavor" > Your hand lashes out like a dragon&apos;s tail, and with the lightest touch unleashes power that knocks your foe to the ground. </specific>
+            <specific name="Power Usage" > At-Will </specific>
+            <specific name="Display" />
+            <specific name="Keywords" > Full Discipline, Psionic </specific>
+            <specific name="Action Type" > Move Action </specific>
+            <specific name="Attack Type" > Melee 1 </specific>
+            <specific name="Target" > One ally or one prone enemy </specific>
+            <specific name="Effect" > You swap places with the target. </specific>
+            <specific name="_ParentPower" > ID_FMP_POWER_7450 </specific>
+            <specific name="Class" > ID_FMP_CLASS_362 </specific>
+         </RulesElement>
+         <RulesElement name="Stone Fist Monk" type="Build" internal-id="ID_FMP_BUILD_107" charelem="78" legality="rules-legal" >
+            <specific name="Suggested" > Class Feature: Stone FistFeat: Crashing Tempest StyleSkills: Acrobatics, Athletics, Endurance, PerceptionAt-Will Powers: crane&apos;s wings, dragon&apos;s tailEncounter Power: awaken the slumbering hurtDaily Power: spinning leopard maneuver </specific>
+            <specific name="Key Abilities" > Dex, Str, Wis </specific>
+            <specific name="_SUGGESTED_FEATS" > ID_FMP_FEAT_2589 </specific>
+            <specific name="_SUGGESTED_POWERS" > ID_FMP_POWER_7450, ID_FMP_POWER_7535, ID_FMP_POWER_11208, ID_FMP_POWER_11213 </specific>
+            <specific name="Class" > ID_FMP_CLASS_362 </specific>
+         Your fighting style is aggressive, emphasizing powers that eliminate your enemy quickly, rather than powers that help you control the battle. Though capable of rapid movement, your combat maneuvers are more likely to consist of a couple of quick steps, rather than a rapid shift across the entire battle. As with other monks, Dexterity should be your highest score. Choose Strength as your second-highest ability score, followed by Wisdom.
+         </RulesElement>
+         <RulesElement name="Stone Fist Monk" type="Build Suggestions" internal-id="ID_INTERNAL_BUILD_SUGGESTIONS_STONE_FIST_MONK" charelem="79" legality="rules-legal" >
+            <specific name="_SupportsID" > ID_FMP_BUILD_107 </specific>
+         </RulesElement>
+         <RulesElement name="Stealth" type="Skill Training" internal-id="ID_INTERNAL_SKILL_TRAINING_STEALTH" charelem="12" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Thievery" type="Skill Training" internal-id="ID_INTERNAL_SKILL_TRAINING_THIEVERY" charelem="13" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Acrobatics" type="Skill Training" internal-id="ID_INTERNAL_SKILL_TRAINING_ACROBATICS" charelem="10" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Athletics" type="Skill Training" internal-id="ID_INTERNAL_SKILL_TRAINING_ATHLETICS" charelem="15" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Unarmored Agility" type="Feat" internal-id="ID_FMP_FEAT_2626" url="http://www.wizards.com/dndinsider/compendium/feat.aspx?id=2626" charelem="6" legality="rules-legal" >
+            <specific name="Tier" > Heroic </specific>
+            <specific name="Short Description" > +2 AC while wearing cloth armor or no armor </specific>
+         You gain a +2 feat bonus to AC while wearing either cloth armor or no armor.
+         </RulesElement>
+         <RulesElement name="Rising Storm" type="Power" internal-id="ID_FMP_POWER_11210" url="http://www.wizards.com/dndinsider/compendium/power.aspx?id=11210" charelem="80" legality="rules-legal" >
+            <specific name="Flavor" > The air around you hums with power as you focus the energy within you into a roar of thunder. </specific>
+            <specific name="Power Usage" > Encounter </specific>
+            <specific name="_ChildPower" > ID_FMP_POWER_11211 </specific>
+            <specific name="Display" > Monk Attack 1 </specific>
+            <specific name="Keywords" > Full Discipline, Implement, Psionic, Thunder </specific>
+            <specific name="Action Type" > Standard Action </specific>
+            <specific name="Attack Type" > Melee touch </specific>
+            <specific name="Target" > One creature </specific>
+            <specific name="Attack" > Dexterity vs. Fortitude </specific>
+            <specific name="Hit" > 2d8 + Dexterity modifier thunder damage, and each enemy adjacent to the target takes thunder damage equal to your Strength modifier. </specific>
+            <specific name="Class" > ID_FMP_CLASS_362 </specific>
+            <specific name="Level" > 1 </specific>
+            <specific name="Power Type" > Attack </specific>
+         </RulesElement>
+         <RulesElement name="Rising Storm [Movement Technique]" type="Power" internal-id="ID_FMP_POWER_11211" url="http://www.wizards.com/dndinsider/compendium/power.aspx?id=11211" charelem="81" legality="rules-legal" >
+            <specific name="Flavor" > The air around you hums with power as you focus the energy within you into a roar of thunder. </specific>
+            <specific name="Power Usage" > Encounter </specific>
+            <specific name="Display" />
+            <specific name="Keywords" > Full Discipline, Psionic </specific>
+            <specific name="Action Type" > Move Action </specific>
+            <specific name="Attack Type" > Personal </specific>
+            <specific name="Effect" > You fly your speed. If you don&apos;t land at the end of this movement, you fall. </specific>
+            <specific name="_ParentPower" > ID_FMP_POWER_11210 </specific>
+            <specific name="Class" > ID_FMP_CLASS_362 </specific>
+         </RulesElement>
+         <RulesElement name="Spinning Leopard Maneuver" type="Power" internal-id="ID_FMP_POWER_11213" url="http://www.wizards.com/dndinsider/compendium/power.aspx?id=11213" charelem="82" legality="rules-legal" >
+            <specific name="Flavor" > Maintaining perfect balance, you weave a deadly path through the fray, dealing kicks and punches to each foe you pass. </specific>
+            <specific name="Power Usage" > Daily </specific>
+            <specific name="Display" > Monk Attack 1 </specific>
+            <specific name="Keywords" > Implement, Psionic </specific>
+            <specific name="Action Type" > Standard Action </specific>
+            <specific name="Attack Type" > Melee 1 </specific>
+            <specific name="Effect" > You shift your speed and can make the following attack once against each enemy that you move adjacent to during the shift. </specific>
+            <specific name="	Target" > One enemy </specific>
+            <specific name="	Attack" > Dexterity vs. Reflex </specific>
+            <specific name="	Hit" > 2d6 + Dexterity modifier damage. </specific>
+            <specific name="	Miss" > Half damage. </specific>
+            <specific name="Class" > ID_FMP_CLASS_362 </specific>
+            <specific name="Level" > 1 </specific>
+            <specific name="Power Type" > Attack </specific>
+         </RulesElement>
+         <RulesElement name="Implement Proficiency (Club)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(CLUB)" charelem="83" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Implement Proficiency (Dagger)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(DAGGER)" charelem="84" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Implement Proficiency (Spear)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SPEAR)" charelem="85" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Implement Proficiency (Staff)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(STAFF)" charelem="86" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Implement Proficiency (Sling)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SLING)" charelem="87" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Implement Proficiency (Shuriken)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SHURIKEN)" charelem="88" legality="rules-legal" >
+         </RulesElement>
+         <RulesElement name="Implement Proficiency (Monk unarmed strike)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(MONK_UNARMED_STRIKE)" charelem="89" legality="rules-legal" >
+         </RulesElement>
+      </RulesElementTally>
+
+
+      <!--
+         The tally of the character&apos;s loot
+      -->
+      <LootTally>
+         <loot count="1" equip-count="1" ShowPowerCard="1" >
+            <RulesElement name="Monk unarmed strike" type="Weapon" internal-id="ID_INTERNAL_WEAPON_MONK_UNARMED_STRIKE" charelem="90" legality="rules-legal" >
+               <specific name="InternalOnly" > 1 </specific>
+               <specific name="Weight" > 0 </specific>
+               <specific name="Gold" > 0 </specific>
+               <specific name="Range" />
+               <specific name="Damage" > 1d8 </specific>
+               <specific name="Proficiency Bonus" > 3 </specific>
+               <specific name="Weapon Category" > Improvised Melee </specific>
+               <specific name="Hands Required" > One-Handed </specific>
+               <specific name="Item Slot" > Off-Hand </specific>
+               <specific name="Group" > Unarmed </specific>
+               <specific name="Properties" > Off-Hand </specific>
+               <specific name="_IncludeImprovised" > 1 </specific>
+               <specific name="_SupportsID" > ID_FMP_CLASS_362 </specific>
+            You can make unarmed attacks with much greater effectiveness than most combatants. When you make a weapon attack such as a melee basic attack, you can use the monk unarmed strike, which is a weapon in the unarmed weapon group. This weapon has the off-hand weapon property and a +3 proficiency bonus, and it deals 1d8 damage. You must have a hand free to use your monk unarmed strike, even if you&apos;re kicking, kneeing, elbowing, or head-butting a target. Also, your monk unarmed strike can benefit from a magic ki focus if you have one.
+
+    *UPDATE* The rules for monk unarmed strikes has changed since the playtest. Your unarmed strike no longer can be enchanted, nor does it function as an implement. Talk with your DM about updating your character. A suggested resolution is to sell your enchanted unarmed strike and then purchase a Ki Focus in its place.
+            </RulesElement>
+         </loot>
+      </LootTally>
+
+      <!--
+         The fields for your powers. Each power is then followed
+         by the stats with that power paired with each legal weapon.
+         The weapons are listed in priority as the builder sees it.
+         Particularly, the first weapon listed is the default.
+      -->
+      <PowerStats>
+         <Power name="Melee Basic Attack" >
+            <specific name="Flavor" > You resort to the simple attack you learned when you first picked up a melee weapon. </specific>
+            <specific name="Power Usage" > At-Will </specific>
+            <specific name="Display" > Basic Attack </specific>
+            <specific name="Keywords" > Weapon </specific>
+            <specific name="Action Type" > Standard Action </specific>
+            <specific name="Attack Type" > Melee weapon </specific>
+            <specific name="Target" > One creature </specific>
+            <specific name="Attack" > Strength vs. AC </specific>
+            <specific name="Hit" > 1[W] + Strength modifier damage. </specific>
+            <specific name="	Level 21" > 2[W] + Strength modifier damage. </specific>
+            <Weapon name="Monk unarmed strike" >
+               <RulesElement name="Monk unarmed strike" type="Weapon" internal-id="ID_INTERNAL_WEAPON_MONK_UNARMED_STRIKE" charelem="90" legality="rules-legal" />
+               <AttackBonus> 5 </AttackBonus>
+               <Damage> 1d8+2 </Damage>
+               <AttackStat> Strength </AttackStat>
+               <Defense> AC </Defense>
+               <HitComponents> +2 Strength modifier.
++0 half your level.
++3 proficiency bonus.
+
+               </HitComponents>
+               <DamageComponents> +2 Strength modifier.
+
+               </DamageComponents>
+               <CritDamage> 10 </CritDamage>
+               <CritRange> 20 </CritRange>
+            </Weapon>
+            <Weapon name="Unarmed" >
+               <AttackBonus> 2 </AttackBonus>
+               <Damage> 1d4+2 </Damage>
+               <AttackStat> Strength </AttackStat>
+               <Defense> AC </Defense>
+               <HitComponents> +2 Strength modifier.
++0 half your level.
+
+               </HitComponents>
+               <DamageComponents> +2 Strength modifier.
+
+               </DamageComponents>
+               <CritDamage> 6 </CritDamage>
+               <CritRange> 20 </CritRange>
+            </Weapon>
+         </Power>
+
+         <Power name="Ranged Basic Attack" >
+            <specific name="Flavor" > You resort to the simple attack you learned when you first picked up a ranged weapon. </specific>
+            <specific name="Power Usage" > At-Will </specific>
+            <specific name="Display" > Basic Attack </specific>
+            <specific name="Keywords" > Weapon </specific>
+            <specific name="Action Type" > Standard Action </specific>
+            <specific name="Attack Type" > Ranged weapon </specific>
+            <specific name="Target" > One creature </specific>
+            <specific name="Attack" > Dexterity vs. AC </specific>
+            <specific name="Hit" > 1[W] + Dexterity modifier damage. </specific>
+            <specific name="	Level 21" > 2[W] + Dexterity modifier damage. </specific>
+            <Weapon name="Unarmed" >
+               <AttackBonus> 5 </AttackBonus>
+               <Damage> 1d4+5 </Damage>
+               <AttackStat> Dexterity </AttackStat>
+               <Defense> AC </Defense>
+               <HitComponents> +5 Dexterity modifier.
++0 half your level.
+
+               </HitComponents>
+               <DamageComponents> +5 Dexterity modifier.
+
+               </DamageComponents>
+               <CritDamage> 9 </CritDamage>
+               <CritRange> 20 </CritRange>
+            </Weapon>
+         </Power>
+
+         <Power name="Shifty Maneuver" >
+            <specific name="Flavor" > You call on your natural ability to dodge danger, taking your tribemates along for the ride. </specific>
+            <specific name="Power Usage" > Encounter </specific>
+            <specific name="Display" > Kobold Utility </specific>
+            <specific name="Keywords" />
+            <specific name="Action Type" > Move Action </specific>
+            <specific name="Attack Type" > Close burst 2 </specific>
+            <specific name="Target" > You and each ally in the burst </specific>
+            <specific name="Effect" > Each target can shift 1 square as a free action. </specific>
+            <specific name="Class" > ID_FMP_RACE_23 </specific>
+            <specific name="Level" />
+            <specific name="Power Type" > Utility </specific>
+            <specific name="_ParentFeature" > ID_FMP_RACIAL_TRAIT_416 </specific>
+         </Power>
+
+         <Power name="Stone Fist Flurry of Blows" >
+            <specific name="Flavor" > You lash out at another enemy after your first attack, a casual reminder of your great strength. </specific>
+            <specific name="Power Usage" > At-Will </specific>
+            <specific name="Display" > Monk Feature </specific>
+            <specific name="Keywords" > Psionic </specific>
+            <specific name="Action Type" > No Action </specific>
+            <specific name="Attack Type" > Melee 1 </specific>
+            <specific name="Trigger" > You hit with an attack during your turn </specific>
+            <specific name="Target" > One creatureLevel 11: One or two creaturesLevel 21: Each enemy adjacent to you </specific>
+            <specific name="Effect" > The target takes damage equal to 3 + your Strength modifier. If the target wasn&apos;t targeted by the triggering attack, the damage increases by 2 (4 at 11th level and 6 at 21st level). </specific>
+            <specific name="Special" > You can use this power only once per round. </specific>
+            <specific name="Class" > ID_FMP_CLASS_362 </specific>
+            <specific name="Level" />
+            <specific name="Power Type" > Feature </specific>
+            <specific name="_ParentFeature" > ID_FMP_CLASS_FEATURE_2360,ID_FMP_CLASS_FEATURE_2533 </specific>
+         </Power>
+
+         <Power name="Five Storms" >
+            <specific name="Flavor" > You move like a whirlwind, spinning as you unleash an array of kicks and punches, which slam into your foes like a storm crashing onto the shore. </specific>
+            <specific name="Power Usage" > At-Will </specific>
+            <specific name="_ChildPower" > ID_FMP_POWER_7515 </specific>
+            <specific name="Display" > Monk Attack 1 </specific>
+            <specific name="Keywords" > Full Discipline, Implement, Psionic </specific>
+            <specific name="Action Type" > Standard Action </specific>
+            <specific name="Attack Type" > Close burst 1 </specific>
+            <specific name="Target" > Each enemy you can see in the burst </specific>
+            <specific name="Attack" > Dexterity vs. Reflex </specific>
+            <specific name="Hit" > 1d8 + Dexterity modifier damage.Level 21: 2d8 + Dexterity modifier damage. </specific>
+            <specific name="Class" > ID_FMP_CLASS_362 </specific>
+            <specific name="Level" > 1 </specific>
+            <specific name="Power Type" > Attack </specific>
+            <Weapon name="Monk unarmed strike" >
+               <RulesElement name="Monk unarmed strike" type="Weapon" internal-id="ID_INTERNAL_WEAPON_MONK_UNARMED_STRIKE" charelem="90" legality="rules-legal" />
+               <AttackBonus> 5 </AttackBonus>
+               <Damage> 1d8+5 </Damage>
+               <AttackStat> Dexterity </AttackStat>
+               <Defense> Reflex </Defense>
+               <HitComponents> +5 Dexterity modifier.
++0 half your level.
+
+               </HitComponents>
+               <DamageComponents> +5 Dexterity modifier.
+
+               </DamageComponents>
+               <CritDamage> 13 </CritDamage>
+               <CritRange> 20 </CritRange>
+            </Weapon>
+            <Weapon name="Unarmed" >
+               <AttackBonus> 5 </AttackBonus>
+               <Damage> 1d8+5 </Damage>
+               <AttackStat> Dexterity </AttackStat>
+               <Defense> Reflex </Defense>
+               <HitComponents> +5 Dexterity modifier.
++0 half your level.
+
+               </HitComponents>
+               <DamageComponents> +5 Dexterity modifier.
+
+               </DamageComponents>
+               <CritDamage> 13 </CritDamage>
+               <CritRange> 20 </CritRange>
+            </Weapon>
+         </Power>
+
+         <Power name="Five Storms [Movement Technique]" >
+            <specific name="Flavor" > You move like a whirlwind, spinning as you unleash an array of kicks and punches, which slam into your foes like a storm crashing onto the shore. </specific>
+            <specific name="Power Usage" > At-Will </specific>
+            <specific name="Display" />
+            <specific name="Keywords" > Full Discipline, Psionic </specific>
+            <specific name="Action Type" > Move Action </specific>
+            <specific name="Attack Type" > Personal </specific>
+            <specific name="Effect" > You shift 2 squares. </specific>
+            <specific name="_ParentPower" > ID_FMP_POWER_7452 </specific>
+            <specific name="Class" > ID_FMP_CLASS_362 </specific>
+         </Power>
+
+         <Power name="Dragon&apos;s Tail" >
+            <specific name="Flavor" > Your hand lashes out like a dragon&apos;s tail, and with the lightest touch unleashes power that knocks your foe to the ground. </specific>
+            <specific name="Power Usage" > At-Will </specific>
+            <specific name="_ChildPower" > ID_FMP_POWER_7513 </specific>
+            <specific name="Display" > Monk Attack 1 </specific>
+            <specific name="Keywords" > Full Discipline, Implement, Psionic </specific>
+            <specific name="Action Type" > Standard Action </specific>
+            <specific name="Attack Type" > Melee touch </specific>
+            <specific name="Target" > One creature </specific>
+            <specific name="Attack" > Dexterity vs. Fortitude </specific>
+            <specific name="Hit" > 1d6 + Dexterity modifier damage, and you knock the target prone.Level 21: 2d6 + Dexterity modifier damage. </specific>
+            <specific name="Class" > ID_FMP_CLASS_362 </specific>
+            <specific name="Level" > 1 </specific>
+            <specific name="Power Type" > Attack </specific>
+            <Weapon name="Monk unarmed strike" >
+               <RulesElement name="Monk unarmed strike" type="Weapon" internal-id="ID_INTERNAL_WEAPON_MONK_UNARMED_STRIKE" charelem="90" legality="rules-legal" />
+               <AttackBonus> 5 </AttackBonus>
+               <Damage> 1d6+5 </Damage>
+               <AttackStat> Dexterity </AttackStat>
+               <Defense> Fortitude </Defense>
+               <HitComponents> +5 Dexterity modifier.
++0 half your level.
+
+               </HitComponents>
+               <DamageComponents> +5 Dexterity modifier.
+
+               </DamageComponents>
+               <CritDamage> 11 </CritDamage>
+               <CritRange> 20 </CritRange>
+            </Weapon>
+            <Weapon name="Unarmed" >
+               <AttackBonus> 5 </AttackBonus>
+               <Damage> 1d6+5 </Damage>
+               <AttackStat> Dexterity </AttackStat>
+               <Defense> Fortitude </Defense>
+               <HitComponents> +5 Dexterity modifier.
++0 half your level.
+
+               </HitComponents>
+               <DamageComponents> +5 Dexterity modifier.
+
+               </DamageComponents>
+               <CritDamage> 11 </CritDamage>
+               <CritRange> 20 </CritRange>
+            </Weapon>
+         </Power>
+
+         <Power name="Dragon&apos;s Tail [Movement Technique]" >
+            <specific name="Flavor" > Your hand lashes out like a dragon&apos;s tail, and with the lightest touch unleashes power that knocks your foe to the ground. </specific>
+            <specific name="Power Usage" > At-Will </specific>
+            <specific name="Display" />
+            <specific name="Keywords" > Full Discipline, Psionic </specific>
+            <specific name="Action Type" > Move Action </specific>
+            <specific name="Attack Type" > Melee 1 </specific>
+            <specific name="Target" > One ally or one prone enemy </specific>
+            <specific name="Effect" > You swap places with the target. </specific>
+            <specific name="_ParentPower" > ID_FMP_POWER_7450 </specific>
+            <specific name="Class" > ID_FMP_CLASS_362 </specific>
+         </Power>
+
+         <Power name="Rising Storm" >
+            <specific name="Flavor" > The air around you hums with power as you focus the energy within you into a roar of thunder. </specific>
+            <specific name="Power Usage" > Encounter </specific>
+            <specific name="_ChildPower" > ID_FMP_POWER_11211 </specific>
+            <specific name="Display" > Monk Attack 1 </specific>
+            <specific name="Keywords" > Full Discipline, Implement, Psionic, Thunder </specific>
+            <specific name="Action Type" > Standard Action </specific>
+            <specific name="Attack Type" > Melee touch </specific>
+            <specific name="Target" > One creature </specific>
+            <specific name="Attack" > Dexterity vs. Fortitude </specific>
+            <specific name="Hit" > 2d8 + Dexterity modifier thunder damage, and each enemy adjacent to the target takes thunder damage equal to your Strength modifier. </specific>
+            <specific name="Class" > ID_FMP_CLASS_362 </specific>
+            <specific name="Level" > 1 </specific>
+            <specific name="Power Type" > Attack </specific>
+            <Weapon name="Monk unarmed strike" >
+               <RulesElement name="Monk unarmed strike" type="Weapon" internal-id="ID_INTERNAL_WEAPON_MONK_UNARMED_STRIKE" charelem="90" legality="rules-legal" />
+               <AttackBonus> 5 </AttackBonus>
+               <Damage> 2d8+5 </Damage>
+               <DamageType> Thunder </DamageType>
+               <AttackStat> Dexterity </AttackStat>
+               <Defense> Fortitude </Defense>
+               <HitComponents> +5 Dexterity modifier.
++0 half your level.
+
+               </HitComponents>
+               <DamageComponents> +5 Dexterity modifier.
+
+               </DamageComponents>
+               <CritDamage> 21 </CritDamage>
+               <CritRange> 20 </CritRange>
+            </Weapon>
+            <Weapon name="Unarmed" >
+               <AttackBonus> 5 </AttackBonus>
+               <Damage> 2d8+5 </Damage>
+               <DamageType> Thunder </DamageType>
+               <AttackStat> Dexterity </AttackStat>
+               <Defense> Fortitude </Defense>
+               <HitComponents> +5 Dexterity modifier.
++0 half your level.
+
+               </HitComponents>
+               <DamageComponents> +5 Dexterity modifier.
+
+               </DamageComponents>
+               <CritDamage> 21 </CritDamage>
+               <CritRange> 20 </CritRange>
+            </Weapon>
+         </Power>
+
+         <Power name="Rising Storm [Movement Technique]" >
+            <specific name="Flavor" > The air around you hums with power as you focus the energy within you into a roar of thunder. </specific>
+            <specific name="Power Usage" > Encounter </specific>
+            <specific name="Display" />
+            <specific name="Keywords" > Full Discipline, Psionic </specific>
+            <specific name="Action Type" > Move Action </specific>
+            <specific name="Attack Type" > Personal </specific>
+            <specific name="Effect" > You fly your speed. If you don&apos;t land at the end of this movement, you fall. </specific>
+            <specific name="_ParentPower" > ID_FMP_POWER_11210 </specific>
+            <specific name="Class" > ID_FMP_CLASS_362 </specific>
+         </Power>
+
+         <Power name="Spinning Leopard Maneuver" >
+            <specific name="Flavor" > Maintaining perfect balance, you weave a deadly path through the fray, dealing kicks and punches to each foe you pass. </specific>
+            <specific name="Power Usage" > Daily </specific>
+            <specific name="Display" > Monk Attack 1 </specific>
+            <specific name="Keywords" > Implement, Psionic </specific>
+            <specific name="Action Type" > Standard Action </specific>
+            <specific name="Attack Type" > Melee 1 </specific>
+            <specific name="Effect" > You shift your speed and can make the following attack once against each enemy that you move adjacent to during the shift. </specific>
+            <specific name="	Target" > One enemy </specific>
+            <specific name="	Attack" > Dexterity vs. Reflex </specific>
+            <specific name="	Hit" > 2d6 + Dexterity modifier damage. </specific>
+            <specific name="	Miss" > Half damage. </specific>
+            <specific name="Class" > ID_FMP_CLASS_362 </specific>
+            <specific name="Level" > 1 </specific>
+            <specific name="Power Type" > Attack </specific>
+            <Weapon name="Monk unarmed strike" >
+               <RulesElement name="Monk unarmed strike" type="Weapon" internal-id="ID_INTERNAL_WEAPON_MONK_UNARMED_STRIKE" charelem="90" legality="rules-legal" />
+               <AttackBonus> 5 </AttackBonus>
+               <Damage> 2d6+5 </Damage>
+               <AttackStat> Dexterity </AttackStat>
+               <Defense> Reflex </Defense>
+               <HitComponents> +5 Dexterity modifier.
++0 half your level.
+
+               </HitComponents>
+               <DamageComponents> +5 Dexterity modifier.
+
+               </DamageComponents>
+               <CritDamage> 17 </CritDamage>
+               <CritRange> 20 </CritRange>
+            </Weapon>
+            <Weapon name="Unarmed" >
+               <AttackBonus> 5 </AttackBonus>
+               <Damage> 2d6+5 </Damage>
+               <AttackStat> Dexterity </AttackStat>
+               <Defense> Reflex </Defense>
+               <HitComponents> +5 Dexterity modifier.
++0 half your level.
+
+               </HitComponents>
+               <DamageComponents> +5 Dexterity modifier.
+
+               </DamageComponents>
+               <CritDamage> 17 </CritDamage>
+               <CritRange> 20 </CritRange>
+            </Weapon>
+         </Power>
+
+      </PowerStats>
+
+
+      <!--
+         The character&apos;s companions
+      -->
+      <Companions>
+      </Companions>
+
+
+      <!--
+         The character&apos;s journal entries
+      -->
+      <Journal>
+      </Journal>
+
+   </CharacterSheet>
+
+   <!--
+      Level tags are an internal tree of rules elements, see RulesElementTally
+      above for the final list of rules elements,  taking into account
+      retraining, etc.
+   -->
+   <Level>
+      <RulesElement name="1" type="Level" internal-id="ID_INTERNAL_LEVEL_1" charelem="3" legality="rules-legal" >
+         <RulesElement name="Level1Rules" type="Level1Rules" internal-id="ID_INTERNAL_LEVEL1RULES_LEVEL1RULES" charelem="19" legality="rules-legal" >
+            <RulesElement name="SkillRules" type="Level1Rules" internal-id="ID_INTERNAL_LEVEL1RULES_SKILLRULES" charelem="9" legality="rules-legal" >
+               <RulesElement name="Acrobatics" type="Skill" internal-id="ID_FMP_SKILL_1" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=1" charelem="20" legality="rules-legal" />
+               <RulesElement name="Arcana" type="Skill" internal-id="ID_FMP_SKILL_2" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=2" charelem="21" legality="rules-legal" />
+               <RulesElement name="Bluff" type="Skill" internal-id="ID_FMP_SKILL_3" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=3" charelem="22" legality="rules-legal" />
+               <RulesElement name="Diplomacy" type="Skill" internal-id="ID_FMP_SKILL_6" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=6" charelem="23" legality="rules-legal" />
+               <RulesElement name="Dungeoneering" type="Skill" internal-id="ID_FMP_SKILL_7" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=7" charelem="24" legality="rules-legal" />
+               <RulesElement name="Endurance" type="Skill" internal-id="ID_FMP_SKILL_8" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=8" charelem="25" legality="rules-legal" />
+               <RulesElement name="Heal" type="Skill" internal-id="ID_FMP_SKILL_9" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=9" charelem="26" legality="rules-legal" />
+               <RulesElement name="History" type="Skill" internal-id="ID_FMP_SKILL_11" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=11" charelem="27" legality="rules-legal" />
+               <RulesElement name="Insight" type="Skill" internal-id="ID_FMP_SKILL_13" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=13" charelem="28" legality="rules-legal" />
+               <RulesElement name="Intimidate" type="Skill" internal-id="ID_FMP_SKILL_14" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=14" charelem="29" legality="rules-legal" />
+               <RulesElement name="Nature" type="Skill" internal-id="ID_FMP_SKILL_16" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=16" charelem="30" legality="rules-legal" />
+               <RulesElement name="Perception" type="Skill" internal-id="ID_FMP_SKILL_17" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=17" charelem="31" legality="rules-legal" />
+               <RulesElement name="Religion" type="Skill" internal-id="ID_FMP_SKILL_18" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=18" charelem="32" legality="rules-legal" />
+               <RulesElement name="Stealth" type="Skill" internal-id="ID_FMP_SKILL_20" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=20" charelem="33" legality="rules-legal" />
+               <RulesElement name="Streetwise" type="Skill" internal-id="ID_FMP_SKILL_21" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=21" charelem="34" legality="rules-legal" />
+               <RulesElement name="Thievery" type="Skill" internal-id="ID_FMP_SKILL_23" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=23" charelem="35" legality="rules-legal" />
+               <RulesElement name="Athletics" type="Skill" internal-id="ID_FMP_SKILL_27" url="http://www.wizards.com/dndinsider/compendium/skill.aspx?id=27" charelem="36" legality="rules-legal" />
+            </RulesElement>
+            <RulesElement name="Heroic" type="Tier" internal-id="ID_INTERNAL_TIER_HEROIC" charelem="37" legality="rules-legal" />
+            <RulesElement name="Melee Basic Attack" type="Power" internal-id="ID_INTERNAL_POWER_MELEE_BASIC_ATTACK" charelem="38" legality="rules-legal" />
+            <RulesElement name="Ranged Basic Attack" type="Power" internal-id="ID_INTERNAL_POWER_RANGED_BASIC_ATTACK" charelem="39" legality="rules-legal" />
+         </RulesElement>
+         <RulesElement name="DetailsRules" type="Level1Rules" internal-id="ID_INTERNAL_LEVEL1RULES_DETAILSRULES" charelem="40" legality="rules-legal" >
+            <RulesElement name="male" type="Gender" internal-id="ID_INTERNAL_GENDER_MALE" charelem="41" legality="rules-legal" />
+            <RulesElement name="Unaligned" type="Alignment" internal-id="ID_FMP_ALIGNMENT_1" charelem="42" legality="rules-legal" />
+         </RulesElement>
+         <RulesElement name="Expansion1" type="Level1Rules" internal-id="ID_INTERNAL_LEVEL1RULES_EXPANSION1" charelem="43" legality="rules-legal" >
+            <RulesElement name="" type="" charelem="91" legality="rules-legal" />
+            <RulesElement name="Background Benefit" type="Internal" internal-id="ID_INTERNAL_INTERNAL_BACKGROUND_BENEFIT" charelem="44" legality="rules-legal" >
+               <RulesElement name="" type="" charelem="92" legality="rules-legal" />
+            </RulesElement>
+            <RulesElement name="" type="" charelem="93" legality="rules-legal" />
+            <RulesElement name="" type="" charelem="94" legality="rules-legal" />
+            <RulesElement name="" type="" charelem="95" legality="rules-legal" />
+            <RulesElement name="" type="" charelem="96" legality="rules-legal" />
+            <RulesElement name="" type="" charelem="97" legality="rules-legal" />
+         </RulesElement>
+         <RulesElement name="Expansion2" type="Level1Rules" internal-id="ID_INTERNAL_LEVEL1RULES_EXPANSION2" charelem="45" legality="rules-legal" >
+            <RulesElement name="" type="" charelem="98" legality="rules-legal" />
+         </RulesElement>
+         <RulesElement name="Expansion3" type="Level1Rules" internal-id="ID_INTERNAL_LEVEL1RULES_EXPANSION3" charelem="46" legality="rules-legal" />
+         <RulesElement name="Expansion4" type="Level1Rules" internal-id="ID_INTERNAL_LEVEL1RULES_EXPANSION4" charelem="47" legality="rules-legal" />
+         <RulesElement name="Expansion5" type="Level1Rules" internal-id="ID_INTERNAL_LEVEL1RULES_EXPANSION5" charelem="48" legality="rules-legal" />
+         <RulesElement name="Kobold" type="Race" internal-id="ID_FMP_RACE_23" url="http://www.wizards.com/dndinsider/compendium/race.aspx?id=23" charelem="16" legality="rules-legal" >
+            <RulesElement name="Kobold" type="Grants" internal-id="ID_INTERNAL_GRANTS_KOBOLD" charelem="49" legality="rules-legal" >
+               <RulesElement name="Small" type="Size" internal-id="ID_INTERNAL_SIZE_SMALL" charelem="50" legality="rules-legal" >
+                  <RulesElement name="Small Weapons" type="Internal" internal-id="ID_INTERNAL_INTERNAL_SMALL_WEAPONS" charelem="51" legality="rules-legal" />
+               </RulesElement>
+               <RulesElement name="Darkvision" type="Vision" internal-id="ID_INTERNAL_VISION_DARKVISION" charelem="52" legality="rules-legal" />
+               <RulesElement name="Shifty Maneuver" type="Racial Trait" internal-id="ID_FMP_RACIAL_TRAIT_416" charelem="53" legality="rules-legal" >
+                  <RulesElement name="Shifty Maneuver" type="Power" internal-id="ID_FMP_POWER_2479" url="http://www.wizards.com/dndinsider/compendium/power.aspx?id=2479" charelem="54" legality="rules-legal" />
+               </RulesElement>
+               <RulesElement name="Trap Sense" type="Racial Trait" internal-id="ID_FMP_RACIAL_TRAIT_717" charelem="4" legality="rules-legal" />
+               <RulesElement name="Reptile" type="Racial Trait" internal-id="ID_FMP_RACIAL_TRAIT_4493" charelem="55" legality="rules-legal" />
+               <RulesElement name="Constitution" type="Race Ability Bonus" internal-id="ID_INTERNAL_RACE_ABILITY_BONUS_CONSTITUTION" charelem="1" legality="rules-legal" />
+               <RulesElement name="Common" type="Language" internal-id="ID_FMP_LANGUAGE_1" charelem="17" legality="rules-legal" />
+               <RulesElement name="Draconic" type="Language" internal-id="ID_FMP_LANGUAGE_2" charelem="18" legality="rules-legal" />
+               <RulesElement name="Dungeoneering Bonus" type="Racial Trait" internal-id="ID_INTERNAL_RACIAL_TRAIT_DUNGEONEERING_BONUS" charelem="11" legality="rules-legal" />
+               <RulesElement name="Thievery Bonus" type="Racial Trait" internal-id="ID_INTERNAL_RACIAL_TRAIT_THIEVERY_BONUS" charelem="14" legality="rules-legal" />
+            </RulesElement>
+            <RulesElement name="Dexterity" type="Race Ability Bonus" internal-id="ID_INTERNAL_RACE_ABILITY_BONUS_DEXTERITY" charelem="2" legality="rules-legal" />
+         </RulesElement>
+         <RulesElement name="Monk" type="Class" internal-id="ID_FMP_CLASS_362" url="http://www.wizards.com/dndinsider/compendium/class.aspx?id=362" charelem="8" legality="rules-legal" >
+            <RulesElement name="Monk" type="Grants" internal-id="ID_INTERNAL_GRANTS_MONK" charelem="56" legality="rules-legal" >
+               <RulesElement name="Striker" type="Role" internal-id="ID_FMP_ROLE_3" charelem="57" legality="rules-legal" />
+               <RulesElement name="Psionic" type="Power Source" internal-id="ID_FMP_POWER_SOURCE_5" charelem="58" legality="rules-legal" />
+               <RulesElement name="Armor Proficiency (Cloth)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_ARMOR_PROFICIENCY_(CLOTH)" charelem="59" legality="rules-legal" />
+               <RulesElement name="Weapon Proficiency (Club)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_WEAPON_PROFICIENCY_(CLUB)" charelem="60" legality="rules-legal" />
+               <RulesElement name="Weapon Proficiency (Dagger)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_WEAPON_PROFICIENCY_(DAGGER)" charelem="61" legality="rules-legal" />
+               <RulesElement name="Weapon Proficiency (Monk unarmed strike)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_WEAPON_PROFICIENCY_(MONK_UNARMED_STRIKE)" charelem="62" legality="rules-legal" />
+               <RulesElement name="Weapon Proficiency (Quarterstaff)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_WEAPON_PROFICIENCY_(QUARTERSTAFF)" charelem="63" legality="rules-legal" />
+               <RulesElement name="Weapon Proficiency (Shuriken)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_WEAPON_PROFICIENCY_(SHURIKEN)" charelem="64" legality="rules-legal" />
+               <RulesElement name="Weapon Proficiency (Sling)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_WEAPON_PROFICIENCY_(SLING)" charelem="65" legality="rules-legal" />
+               <RulesElement name="Weapon Proficiency (Spear)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_WEAPON_PROFICIENCY_(SPEAR)" charelem="66" legality="rules-legal" />
+               <RulesElement name="Monastic Tradition" type="Class Feature" internal-id="ID_FMP_CLASS_FEATURE_1543" charelem="67" legality="rules-legal" >
+                  <RulesElement name="Stone Fist" type="Class Feature" internal-id="ID_FMP_CLASS_FEATURE_2360" charelem="7" legality="rules-legal" >
+                     <RulesElement name="Stone Fist Flurry of Blows" type="Power" internal-id="ID_FMP_POWER_11207" url="http://www.wizards.com/dndinsider/compendium/power.aspx?id=11207" charelem="68" legality="rules-legal" />
+                  </RulesElement>
+               </RulesElement>
+               <RulesElement name="Unarmed Combatant" type="Class Feature" internal-id="ID_FMP_CLASS_FEATURE_1547" charelem="69" legality="rules-legal" >
+                  <RulesElement name="Weapon Proficiency (Monk unarmed strike)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_WEAPON_PROFICIENCY_(MONK_UNARMED_STRIKE)" charelem="99" legality="rules-legal" />
+                  <RulesElement name="Monk unarmed strike" type="Weapon" internal-id="ID_INTERNAL_WEAPON_MONK_UNARMED_STRIKE" charelem="70" legality="rules-legal" />
+               </RulesElement>
+               <RulesElement name="Unarmored Defense" type="Class Feature" internal-id="ID_FMP_CLASS_FEATURE_1548" charelem="5" legality="rules-legal" />
+               <RulesElement name="Monk Implements" type="Grants" internal-id="ID_INTERNAL_GRANTS_MONK_IMPLEMENTS" charelem="71" legality="rules-legal" >
+                  <RulesElement name="Implement Proficiency (Ki Focuses)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(KI_FOCUSES)" charelem="72" legality="rules-legal" />
+                  <RulesElement name="Implement Proficiency (Proficient Weapons)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(PROFICIENT_WEAPONS)" charelem="73" legality="rules-legal" >
+                     <RulesElement name="Implement Proficiency (Club)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(CLUB)" charelem="83" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Dagger)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(DAGGER)" charelem="84" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Javelin)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(JAVELIN)" charelem="100" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Mace)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(MACE)" charelem="101" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Sickle)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SICKLE)" charelem="102" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Spear)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SPEAR)" charelem="85" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Greatclub)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(GREATCLUB)" charelem="103" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Morningstar)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(MORNINGSTAR)" charelem="104" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Staff)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(STAFF)" charelem="86" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Scythe)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SCYTHE)" charelem="105" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Battleaxe)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(BATTLEAXE)" charelem="106" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Handaxe)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(HANDAXE)" charelem="107" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Flail)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(FLAIL)" charelem="108" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Throwing hammer)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(THROWING_HAMMER)" charelem="109" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Warhammer)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(WARHAMMER)" charelem="110" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (War Pick)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(WAR_PICK)" charelem="111" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Scimitar)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SCIMITAR)" charelem="112" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Longsword)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(LONGSWORD)" charelem="113" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Short sword)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SHORT_SWORD)" charelem="114" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Greataxe)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(GREATAXE)" charelem="115" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Heavy flail)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(HEAVY_FLAIL)" charelem="116" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Glaive)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(GLAIVE)" charelem="117" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Halberd)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(HALBERD)" charelem="118" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Maul)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(MAUL)" charelem="119" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Longspear)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(LONGSPEAR)" charelem="120" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Greatsword)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(GREATSWORD)" charelem="121" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Katar)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(KATAR)" charelem="122" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Rapier)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(RAPIER)" charelem="123" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Bastard sword)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(BASTARD_SWORD)" charelem="124" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Whip)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(WHIP)" charelem="125" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Spiked chain)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SPIKED_CHAIN)" charelem="126" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Hand crossbow)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(HAND_CROSSBOW)" charelem="127" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Sling)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SLING)" charelem="87" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Crossbow)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(CROSSBOW)" charelem="128" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Shortbow)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SHORTBOW)" charelem="129" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Longbow)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(LONGBOW)" charelem="130" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Shuriken)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SHURIKEN)" charelem="88" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Falchion)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(FALCHION)" charelem="131" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Spiked gauntlet)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SPIKED_GAUNTLET)" charelem="132" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Broadsword)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(BROADSWORD)" charelem="133" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Khopesh)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(KHOPESH)" charelem="134" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Light war pick)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(LIGHT_WAR_PICK)" charelem="135" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Scourge)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SCOURGE)" charelem="136" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Trident)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(TRIDENT)" charelem="137" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Heavy war pick)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(HEAVY_WAR_PICK)" charelem="138" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Craghammer)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(CRAGHAMMER)" charelem="139" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Kukri)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(KUKRI)" charelem="140" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Parrying dagger)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(PARRYING_DAGGER)" charelem="141" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Spiked shield)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SPIKED_SHIELD)" charelem="142" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Tratnyr)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(TRATNYR)" charelem="143" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Triple-headed flail)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(TRIPLE-HEADED_FLAIL)" charelem="144" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Waraxe)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(WARAXE)" charelem="145" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Execution axe)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(EXECUTION_AXE)" charelem="146" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Fullblade)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(FULLBLADE)" charelem="147" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Greatspear)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(GREATSPEAR)" charelem="148" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Mordenkrad)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(MORDENKRAD)" charelem="149" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Double axe)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(DOUBLE_AXE)" charelem="150" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Double flail)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(DOUBLE_FLAIL)" charelem="151" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Double sword)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(DOUBLE_SWORD)" charelem="152" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Urgrosh)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(URGROSH)" charelem="153" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Repeating crossbow)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(REPEATING_CROSSBOW)" charelem="154" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Greatbow)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(GREATBOW)" charelem="155" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Superior crossbow)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SUPERIOR_CROSSBOW)" charelem="156" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Net)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(NET)" charelem="157" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Bola)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(BOLA)" charelem="158" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Blowgun)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(BLOWGUN)" charelem="159" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Garrote)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(GARROTE)" charelem="160" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Cutting wheel)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(CUTTING_WHEEL)" charelem="161" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Drow long knife)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(DROW_LONG_KNIFE)" charelem="162" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Talenta tangat)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(TALENTA_TANGAT)" charelem="163" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Talenta sharrash)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(TALENTA_SHARRASH)" charelem="164" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Double scimitar)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(DOUBLE_SCIMITAR)" charelem="165" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Zulaat)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(ZULAAT)" charelem="166" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Talenta boomerang)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(TALENTA_BOOMERANG)" charelem="167" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Xen&apos;drik boomerang)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(XEN&apos;DRIK_BOOMERANG)" charelem="168" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Alhulak)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(ALHULAK)" charelem="169" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Cahulaks)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(CAHULAKS)" charelem="170" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Carrikal)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(CARRIKAL)" charelem="171" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Chatkcha)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(CHATKCHA)" charelem="172" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Dejada)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(DEJADA)" charelem="173" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Dragon paw)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(DRAGON_PAW)" charelem="174" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Gauntlet axe)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(GAUNTLET_AXE)" charelem="175" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Gouge)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(GOUGE)" charelem="176" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Gythka)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(GYTHKA)" charelem="177" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Lotulis)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(LOTULIS)" charelem="178" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Puchik)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(PUCHIK)" charelem="179" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Singing stick)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SINGING_STICK)" charelem="180" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Talid)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(TALID)" charelem="181" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Tortoise blade)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(TORTOISE_BLADE)" charelem="182" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Trikal)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(TRIKAL)" charelem="183" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Widow&apos;s knife)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(WIDOW&apos;S_KNIFE)" charelem="184" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Wrist razors)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(WRIST_RAZORS)" charelem="185" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Zadatl)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(ZADATL)" charelem="186" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Blade of Winter&apos;s Mourning)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(BLADE_OF_WINTER&apos;S_MOURNING)" charelem="187" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Blade of Annihilation)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(BLADE_OF_ANNIHILATION)" charelem="188" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Starshadow Blade)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(STARSHADOW_BLADE)" charelem="189" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Sword of the White Well)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SWORD_OF_THE_WHITE_WELL)" charelem="190" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Scourge of Exquisite Agony)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SCOURGE_OF_EXQUISITE_AGONY)" charelem="191" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Light mace)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(LIGHT_MACE)" charelem="192" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Short spear)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SHORT_SPEAR)" charelem="193" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Lance)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(LANCE)" charelem="194" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Pike)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(PIKE)" charelem="195" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Serrated pick)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SERRATED_PICK)" charelem="196" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Kusari-gama)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(KUSARI-GAMA)" charelem="197" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Monk unarmed strike)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(MONK_UNARMED_STRIKE)" charelem="89" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Battlefist)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(BATTLEFIST)" charelem="198" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Claw Fighter Claw)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(CLAW_FIGHTER_CLAW)" charelem="199" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Shadowblade)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SHADOWBLADE)" charelem="200" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Climbing Claw)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(CLIMBING_CLAW)" charelem="201" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Feral Armor Claw)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(FERAL_ARMOR_CLAW)" charelem="202" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Boar Tusk)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(BOAR_TUSK)" charelem="203" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Dragontooth Shield (Heroic Tier))" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(DRAGONTOOTH_SHIELD_(HEROIC_TIER))" charelem="204" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Fighting Shield (Heroic Tier))" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(FIGHTING_SHIELD_(HEROIC_TIER))" charelem="205" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Soul Shield (Paragon Tier))" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SOUL_SHIELD_(PARAGON_TIER))" charelem="206" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Sun Shield (Paragon Tier))" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(SUN_SHIELD_(PARAGON_TIER))" charelem="207" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Rod of Seven Parts (Weapon))" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(ROD_OF_SEVEN_PARTS_(WEAPON))" charelem="208" legality="rules-legal" />
+                     <RulesElement name="Implement Proficiency (Blade of Chaos)" type="Proficiency" internal-id="ID_INTERNAL_PROFICIENCY_IMPLEMENT_PROFICIENCY_(BLADE_OF_CHAOS)" charelem="209" legality="rules-legal" />
+                  </RulesElement>
+               </RulesElement>
+            </RulesElement>
+            <RulesElement name="Five Storms" type="Power" internal-id="ID_FMP_POWER_7452" url="http://www.wizards.com/dndinsider/compendium/power.aspx?id=7452" charelem="74" legality="rules-legal" >
+               <RulesElement name="Five Storms [Movement Technique]" type="Power" internal-id="ID_FMP_POWER_7515" url="http://www.wizards.com/dndinsider/compendium/power.aspx?id=7515" charelem="75" legality="rules-legal" />
+            </RulesElement>
+            <RulesElement name="Dragon&apos;s Tail" type="Power" internal-id="ID_FMP_POWER_7450" url="http://www.wizards.com/dndinsider/compendium/power.aspx?id=7450" charelem="76" legality="rules-legal" >
+               <RulesElement name="Dragon&apos;s Tail [Movement Technique]" type="Power" internal-id="ID_FMP_POWER_7513" url="http://www.wizards.com/dndinsider/compendium/power.aspx?id=7513" charelem="77" legality="rules-legal" />
+            </RulesElement>
+            <RulesElement name="Stone Fist Monk" type="Build" internal-id="ID_FMP_BUILD_107" charelem="78" legality="rules-legal" >
+               <RulesElement name="Stone Fist Monk" type="Build Suggestions" internal-id="ID_INTERNAL_BUILD_SUGGESTIONS_STONE_FIST_MONK" charelem="79" legality="rules-legal" />
+            </RulesElement>
+            <RulesElement name="Stealth" type="Skill Training" internal-id="ID_INTERNAL_SKILL_TRAINING_STEALTH" charelem="12" legality="rules-legal" />
+            <RulesElement name="Thievery" type="Skill Training" internal-id="ID_INTERNAL_SKILL_TRAINING_THIEVERY" charelem="13" legality="rules-legal" />
+            <RulesElement name="Acrobatics" type="Skill Training" internal-id="ID_INTERNAL_SKILL_TRAINING_ACROBATICS" charelem="10" legality="rules-legal" />
+            <RulesElement name="Athletics" type="Skill Training" internal-id="ID_INTERNAL_SKILL_TRAINING_ATHLETICS" charelem="15" legality="rules-legal" />
+         </RulesElement>
+         <RulesElement name="Unarmored Agility" type="Feat" internal-id="ID_FMP_FEAT_2626" url="http://www.wizards.com/dndinsider/compendium/feat.aspx?id=2626" charelem="6" legality="rules-legal" />
+         <RulesElement name="Rising Storm" type="Power" internal-id="ID_FMP_POWER_11210" url="http://www.wizards.com/dndinsider/compendium/power.aspx?id=11210" charelem="80" legality="rules-legal" >
+            <RulesElement name="Rising Storm [Movement Technique]" type="Power" internal-id="ID_FMP_POWER_11211" url="http://www.wizards.com/dndinsider/compendium/power.aspx?id=11211" charelem="81" legality="rules-legal" />
+         </RulesElement>
+         <RulesElement name="Spinning Leopard Maneuver" type="Power" internal-id="ID_FMP_POWER_11213" url="http://www.wizards.com/dndinsider/compendium/power.aspx?id=11213" charelem="82" legality="rules-legal" />
+         <RulesElement name="" type="" charelem="210" legality="rules-legal" />
+      </RulesElement>
+      <loot count="1" equip-count="1" ShowPowerCard="1" >
+         <RulesElement name="Monk unarmed strike" type="Weapon" internal-id="ID_INTERNAL_WEAPON_MONK_UNARMED_STRIKE" charelem="211" legality="rules-legal" />
+      </loot>
+   </Level>
+
+
+   <!--
+      Textstrings are builder variables and contain entered text data, such
+      as character names, as well as internal data
+   -->
+   <textstring name="_PER_LEVEL_1_Carried Money" >
+      100 gp
+   </textstring>
+   <textstring name="_PER_LEVEL_1_Stored Money" >
+      
+   </textstring>
+   <textstring name="_PER_LEVEL_1_Residuum" >
+      0
+   </textstring>
+   <textstring name="CampaignSettingID" >
+      &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;ContentIdentifier xmlns:i=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://schemas.datacontract.org/2004/07/WotC.ContentVault&quot;&gt;&lt;ContentID&gt;2&lt;/ContentID&gt;&lt;Official&gt;true&lt;/Official&gt;&lt;OfficialTypeID i:nil=&quot;true&quot; /&gt;&lt;ScratchID i:nil=&quot;true&quot; /&gt;&lt;TypeID&gt;1&lt;/TypeID&gt;&lt;/ContentIdentifier&gt;
+   </textstring>
+   <textstring name="_INTERNAL_MainHandWeapon" >
+      Monk unarmed strike
+   </textstring>
+   <textstring name="ID_INTERNAL_WEAPON_MONK_UNARMED_STRIKE" >
+      Given
+   </textstring>
+   <textstring name="PortraitID" >
+      &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;ContentIdentifier xmlns:i=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://schemas.datacontract.org/2004/07/WotC.ContentVault&quot;&gt;&lt;ContentID&gt;10022632&lt;/ContentID&gt;&lt;Official&gt;true&lt;/Official&gt;&lt;OfficialTypeID i:nil=&quot;true&quot; /&gt;&lt;ScratchID i:nil=&quot;true&quot; /&gt;&lt;TypeID&gt;2&lt;/TypeID&gt;&lt;/ContentIdentifier&gt;
+   </textstring>
+   <textstring name="PortraitExplicitlySet" >
+      False
+   </textstring>
+   <textstring name="name" >
+      Smee
+   </textstring>
+   <textstring name="Character Save File" >
+      C:\Windows\TEMP\tmpA0BF.tmp
+   </textstring>
+
+
+</D20Character>

@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>three - Node.js for twitter</title>
+    <meta name="description" content="Runnable code example: three - Node.js for twitter in node.js"/>
+    
+    <link rel="canonical" href="http://runnable.com/UVCkNCYKlmDBAAAF/three-node.js">
+    
+    <meta name="fragment" content="!">
+    <link rel="stylesheet" href="/external/styles/head.css">
+    <script type='text/javascript'>
+      // usage: log('inside coolFunc',this,arguments);
+      // http://paulirish.com/2009/log-a-lightweight-wrapper-for-consolelog/
+      window.log = function(){
+        log.history = log.history || [];   // store logs to an array for reference
+        log.history.push(arguments);
+        if(this.console){
+        var args = Array.prototype.slice.call(arguments);
+        var len  = args.length;
+        for (var i=0; i<len; i++) {
+          console.log(args[i]);
+        }
+        }
+      };
+      if (!this.console) this.console = {};
+      if (!this.console.log) this.console.log = window.log;
+    </script>
+    
+    <!-- Typekit -->
+    <script type="text/javascript" src="//use.typekit.net/igw2axp.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <!-- socketio doesnt like being minified -->
+    <script type='text/javascript' src="/external/scripts/vendor/socket.io-client/socket.io.js"></script>
+    <script type='text/javascript'>
+      // Inject user object here based on cookie session.
+      // GLOBAL - check out instances
+      USER_PREPOP     =      {"password":null,"_id":"519a61692e3e5a7b53000001","__v":0,"created":"2013-05-20T17:46:17.302Z","email_md5":null,"id":"519a61692e3e5a7b53000001"}     ;
+      PROJECT_PREPOP  =   {"__v":2,"_id":"UVCkNCYKlmDBAAAF","framework":"node.js","name":"three - Node.js","owner":"5150a344260a9660c1000001","tags":["twitter"],"defaultFile":["server.js"],"created":"2013-03-25T19:23:32.176Z","parent":null,"rootParent":null,"git_url":"/UVCkNCYKlmDBAAAF.git","urlFriendly":"three-node.js"}  ;
+      PROJECTS_PREPOP =  [{"__v":2,"_id":"UVCkNCYKlmDBAAAF","framework":"node.js","name":"three - Node.js","owner":"5150a344260a9660c1000001","tags":["twitter"],"defaultFile":["server.js"],"created":"2013-03-25T19:23:32.176Z","parent":null,"rootParent":null,"git_url":"/UVCkNCYKlmDBAAAF.git","urlFriendly":"three-node.js"},{"__v":1,"_id":"UZa3Ce0on9cVAAAC","framework":"node.js","name":"My Runnable - Node.js","owner":"5150a344260a9660c1000001","tags":["twitter"],"defaultFile":["server.js"],"created":"2013-05-17T23:02:33.832Z","parent":null,"rootParent":null,"git_url":"/UZa3Ce0on9cVAAAC.git","urlFriendly":"my-runnable-node.js"},{"__v":1,"_id":"UZa6P8LPG8cYAAAB","framework":"node.js","name":"How to ___ in twitter with node.js - Node.js","owner":"5150a344260a9660c1000001","tags":["twitter"],"defaultFile":["server.js"],"created":"2013-05-17T23:16:15.205Z","parent":null,"rootParent":null,"git_url":"/UZa6P8LPG8cYAAAB.git","urlFriendly":"how-to-___-in-twitter-with-node.js-node.js"},{"__v":1,"_id":"UZa6b8LPG8cYAAAC","framework":"node.js","name":"How to ___ in twitter with node.js - Node.js","owner":"5150a344260a9660c1000001","tags":["twitter"],"defaultFile":["server.js"],"created":"2013-05-17T23:17:03.568Z","parent":null,"rootParent":null,"git_url":"/UZa6b8LPG8cYAAAC.git","urlFriendly":"how-to-___-in-twitter-with-node.js-node.js"},{"__v":1,"_id":"UZa6mhHwax8ZAAAB","framework":"node.js","name":"How to ___ in twitter - node.js - Node.js","owner":"5150a344260a9660c1000001","tags":["twitter"],"defaultFile":["server.js"],"created":"2013-05-17T23:17:46.593Z","parent":null,"rootParent":null,"git_url":"/UZa6mhHwax8ZAAAB.git","urlFriendly":"how-to-___-in-twitter-node.js-node.js"},{"__v":1,"_id":"UZa6sxHwax8ZAAAC","framework":"node.js","name":"How to ___ in twitter - node.js - Node.js","owner":"5150a344260a9660c1000001","tags":["twitter"],"defaultFile":["server.js"],"created":"2013-05-17T23:18:11.502Z","parent":null,"rootParent":null,"git_url":"/UZa6sxHwax8ZAAAC.git","urlFriendly":"how-to-___-in-twitter-node.js-node.js"},{"__v":1,"_id":"UZa6wxHwax8ZAAAD","framework":"node.js","name":"How to ___ in twitter - node.js - Node.js","owner":"5150a344260a9660c1000001","tags":["twitter"],"defaultFile":["server.js"],"created":"2013-05-17T23:18:27.927Z","parent":null,"rootParent":null,"git_url":"/UZa6wxHwax8ZAAAD.git","urlFriendly":"how-to-___-in-twitter-node.js-node.js"}] ;
+      FILES_PREPOP    =     {"name":"","path":"/","contents":[{"name":"README.md","type":"file","path":"/README.md","content":"IyBORVc="},{"name":"package.json","type":"file","path":"/package.json","content":"ewogICJuYW1lIjogIkhlbGxvV29ybGQiLAogICJhdXRob3IiOiAiUnVubmFibGUiLAogICJ2ZXJzaW9uIjogIjAuMC4xIiwKICAiZGVzY3JpcHRpb24iOiAiUnVubmFibGUgU2FtcGxlIEFwcGxpY2F0aW9uIiwKICAiZGVwZW5kZW5jaWVzIjogewogICAgImV4cHJlc3MiOiAiMi54IgogICB9LAogICJlbmdpbmUiOiAibm9kZSAwLjYueCIKfQ=="},{"name":"server.js","type":"file","path":"/server.js","content":"dmFyIGh0dHAgPSByZXF1aXJlKCdodHRwJyk7Cmh0dHAuY3JlYXRlU2VydmVyKGZ1bmN0aW9uIChyZXEsIHJlcykgewogIHJlcy53cml0ZUhlYWQoMjAwLCB7J0NvbnRlbnQtVHlwZSc6ICd0ZXh0L3BsYWluJ30pOwogIHJlcy5lbmQoJ0hlbGxvIFdvcmxkXG4nKTsKfSkubGlzdGVuKHByb2Nlc3MuZW52Lk9QRU5TSElGVF9OT0RFSlNfUE9SVCwgcHJvY2Vzcy5lbnYuT1BFTlNISUZUX05PREVKU19JUCk7CmNvbnNvbGUubG9nKCdIZWxsbyBXb3JsZCcpOwo=","isDefault":true},{"name":"server.js.desc","type":"file","path":"/server.js.desc","content":"VGhpcyBpcyBhIHNlcnZlci4KVGhlcmUgYXJlIG1hbnkgc2VydmVycyBsaWtlIGl0LgpCdXQgdGhpcyBvbmUgaXMgbWluZS4KaXQncyBsb2NhdGVkIGF0IC9zZXJ2ZXIuanM="}],"open":true}    ;
+      _ENV            =  null ;
+      console.log("ENVIRONMENT: ", _ENV);
+      console.log("SESSION    : ", USER_PREPOP);
+      console.log("PROJECT    : ", PROJECT_PREPOP);
+      console.log("PROJECTS   : ", PROJECTS_PREPOP);
+      console.log("FILES      : ", FILES_PREPOP);
+
+      _config = {}; //global.
+      if (_ENV == 'testing' || _ENV == 'development' || _ENV == 'staging' || ~window.location.host.indexOf('localhost') || ~window.location.host.indexOf('cloudcosmos')) {
+        // current logic forces staging to dev
+        _config.mixpanel = {
+          key: 'de848319a0091fb3a5876184d81a40ec'
+        };
+        _config.googleAnalytics = {
+          id: 'UA-36631837-2'
+        };
+      }
+      else {
+        _config.mixpanel = {
+          key: '8790acfcca0cab43adebbc796f1d4f96'
+        };
+        _config.googleAnalytics = {
+          id: 'UA-36631837-1'
+        };
+      }
+    </script>
+  </head>
+  <body>
+
+  <!-- Main container. -->
+  <div id="layout-container">
+    
+    <div id="slim" class="container ui-layout-container" style="overflow: hidden;">
+      <section class="ui-layout-north">
+  
+  <header id="project-info-view">
+    <div class="wrapper">
+  
+  <div class="browse-more"><a data-bypass href="/twitter"><img class="channel-image" src="/external/images/channels/twitter.png" height="16"> More twitter examples &rsaquo;</a></div>
+  
+  
+  <div class="login-button"><a data-bypass href="#">Login</a></div>
+  <div class="signup-button"><a data-bypass href="#">Signup</a></div>
+  
+  <h1>three - Node.js</h1>
+  
+  <div id="code-toolbar-view" class="actions">
+    <button class="btn-share tooltip" title="Share this project"><i class="icon-share-alt"></i> Share/Export</button>
+<button class="btn-save" title="Save changes"><i class="icon-floppy"></i> Save</button>
+<button class="btn-fork tooltip" title="First save will copy project to a new URL"><i class="icon-floppy"></i> Save Copy</button>
+<button class="run-button" title="Run the current code"><i class="icon-play"></i> Run</button>
+  </div>
+  
+</div>
+<div class="files-wrapper">
+	<button class="btn-files"><i class="icon-folder-close"></i><span> Show all files</span></button>
+  
+  <ul id="file-tabs-view">
+    <!--
+  File tabs
+  Tabs are list items. Clickable file name are anchor links. Close icons are i's
+  Scripts and inline JS used for prototyping/demo purposes only
+  -->
+
+
+
+
+  </ul>
+  
+</div>
+
+  </header>
+  
+</section>
+<section id="code-editor" class="ui-layout-center">
+</section>
+<section class="ui-layout-east nav-file-browser">
+  <ul id="file-tree-root" class="file-tree">
+  </ul>
+</section>
+<div class="modals">
+</div>
+    </div>
+    
+  </div>
+  <div class="blocking-backdrop display-none"></div>
+    <!--[if lt IE 10]>
+      <p class="chromeframe">You are using an unsupported browser. <a href="/http://browsehappy.com/">Upgrade your browser today</a> or <a href="/http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
+
+    <script>
+      // <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+      var _gaq=[['_setAccount', _config.googleAnalytics.id],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+
+      // <!-- start Mixpanel -->
+      (function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+      typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.increment".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+      mixpanel.init(_config.mixpanel.key);
+
+      // <!-- start Metrics Aliasing -->
+      var userId = USER_PREPOP._id;
+      if (userId) {
+        mixpanel.name_tag(userId);
+        mixpanel.people.set({
+          "name": userId,
+          "referrer": document.referrer
+        });
+        mixpanel.identify(userId);
+        mixpanel.alias(userId);
+      }
+    </script>
+
+    <!-- Qualaroo for runnable.com -->
+    <script type="text/javascript">var _kiq = _kiq || [];</script>
+    
+
+    <script data-main="/external/scripts/amd-app" src="/external/scripts/components/requirejs/require.js"></script>
+
+  </body>
+</htm

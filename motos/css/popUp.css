@@ -1,0 +1,135 @@
+/*Reset CSS*/
+#main, #main * {
+	margin: 0;
+	padding: 0;
+}
+
+#main {
+	color: #4b4b4b;
+	line-height: 1.4;
+	font: 12px Arial, helvetica, sans-serif;
+	font-weight: regular;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+#main form {
+  margin: 0;
+}
+
+#main h1 {
+	font-size: 20px;
+}
+
+#main h2 {
+	font-size: 16px;
+}
+
+#main h3 {
+	font-size: 14px;
+}
+
+#main h4 {
+	font-size: 12px;
+}
+
+#main a {
+	color: #3c8ad0;
+}
+
+#main button,
+#main input {
+    font-size: 100%; /* 1 */
+    margin: 0; /* 2 */
+    vertical-align: baseline; /* 3 */
+    *vertical-align: middle; /* 3 */
+    line-height: normal;
+}
+
+#main button,
+#main input[type="button"], /* 1 */
+#main input[type="reset"],
+#main input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+    *overflow: visible;  /* 4 */
+}
+
+#main input[type="checkbox"],
+#main input[type="radio"] {
+    padding: 0; /* 2 */
+    *height: 13px; /* 3 */
+    *width: 13px; /* 3 */
+}
+
+#main button::-moz-focus-inner,
+#main input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+#buttonClose {
+	width: 30px;
+	height: 30px;
+	float: right;
+	margin-top: -2px;
+	padding-top: -2px;
+	margin-right: 10px;
+	background-color: #515252;
+  font-size: 20px;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+#info {
+	padding: 20px;
+	margin-top:20px;
+}
+
+#explCont,
+#formCont,
+#formCont form,
+#bottCont,
+#formCont label,
+#formCont h4 {
+	display: block;
+	margin-top: 15px;
+}
+
+#formCont p {
+	margin-left: 16px;
+}
+
+#explCont p {
+	margin: 0;
+}
+
+#formCont a.line {
+	display: block;
+}
+
+#boldText {
+	font-weight: bold;
+}
+
+#bottCont {
+	font-size: 10px;
+}
+
+#main #buttonSmt {
+	background-color: #3c8ad0;
+	border: none;
+	color: white;
+	padding: 3px 10px;
+	font-weight: bold;
+	font-size: 18px;
+	cursor: pointer;
+	margin-top: 15px;
+	display: inline-block;
+}

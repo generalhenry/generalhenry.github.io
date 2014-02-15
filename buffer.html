@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<title>can I do dis</title>
+<script>
+(function () {
+  function process (html) {
+    var div = document.createElement('div');
+    div.innerHTML = html;
+    //privacy yo
+    return div.innerHTML;
+  }
+  var buffer = '';
+  var dirty =
+  document._write = document.write;
+  document.write = function (html) {
+    console.log(buffer, html);
+    buffer += html;
+    if (buffer === process(buffer)) {
+      var temp = buffer;
+      buffer = '';
+      document._write(temp);
+    }
+  }
+})();
+</script>
+<body>
+  <script id='start'>
+    document.write('<div onclick="alert(5);">');
+    document.write('sup');
+    document.write('</div>');
+    document.write('<sc' +
+      'ript>document.write("what a d");</sc' +
+      'ript>');
+  </script>
+  <div>b b b bro</div>
+</body>

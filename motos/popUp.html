@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<meta charset='UTF-8'>
+<title>Cookies Privacy Information</title>
+<link rel="stylesheet" href="css/popUp.css">
+<script>
+	function changeImg() {
+		return document
+		  .getElementById('buttonSmt')
+		  .style
+		  .backgroundImage =
+		    "url('imgs/submit_on.png')";
+	}
+
+	function closeWindow() {
+		return window.close();
+	}
+
+	function toggle() {
+		for (var i = 0; i < document.form2.other.length; i++) {
+			document.form2.other[i].checked = document.form2.all.checked;
+		}
+	}
+</script>
+<div id="main">
+	<!--Close button-->
+	<form action="#" name="form1">
+		<input id="buttonClose" type="submit" onclick="closeWindow();" value="X">
+	</form>
+
+	<div id="info">
+		<h1>Privacy Notice</h1>
+
+		<!--Explanation container-->
+		<div id="explCont">
+			<h3>Motorola Solutions, Inc. (MSI) Values Your Privacy</h3>
+			<p>
+				MSI would like to know how people respond to our advertisements and
+				use our website, so we can provide the best experience possible for
+				the user. To achieve this, we use “cookies” to collect anonymous data.
+				However, you can control the information we collect.
+				To find out more about the cookies, please see our
+				<a href="http://www.motorolasolutions.com/XU-EN/About/Privacy+Policy#cookies">Privacy Statement</a>.
+			</p>
+		</div>
+
+		<!--Form container-->
+		<div id="formCont">
+			<h3>Choose your web privacy settings:</h3>
+			<!--Checkbox form-->
+			<form action="#" name="form2">
+				<label>
+					<input type="checkbox" value="all" name="all" onclick="toggle()">
+					<b>Accept all cookies from this site</b>
+				</label>
+				<h4>OR</h4>
+				<label>
+					<input type="checkbox" value="performance" name="other">
+					<b>Allow Performance Cookies</b>
+				</label>
+				<p>
+					These are cookies that collect information about how visitors
+					use a web site (although not information that personally identifies visitors),
+					or that can be used for web site analytics.
+					All information these cookies collect is aggregated and therefore anonymous.
+					The information collected is only used to improve web site functionality.
+					<a href="http://www.motorolasolutions.com/XU-EN/About/Privacy+Policy#Performance_Cookies" class="line">
+						See a list of cookies used by MSI which fall
+						into the category of "Performance Cookies“.
+					</a>
+				</p>
+				<label>
+					<input type="checkbox" value="functionality" name="other">
+					<b>Allow Functionality Cookies</b>
+				</label>
+				<p>
+					These are cookies that allow a web site to remember choices a visitor
+					makes (such as user name, language, or region) or provide services or
+					personalization a visitor has asked for (such as watching a video or commenting on a blog)
+					to enhance the web site experience. The information these cookies collect
+					will not be used to target you with advertisements on other web sites.
+					Motorola Solutions does not track visitors' browsing activity once they
+					have gone to another web site. For specific representations on tracking by
+					third party cookies, please refer to links to their policies on our
+					<a href="http://www.motorolasolutions.com/XU-EN/About/Privacy+Policy#cookies">Privacy Page</a>.
+					<a href="http://www.motorolasolutions.com/XU-EN/About/Privacy+Policy#Functionality_Cookies" class="line">
+						See a list of cookies used by MSI which
+						fall into the category of "Functionality Cookies“.
+					</a>
+				</p>
+				<label>
+					<input type="checkbox" value="targeting" name="other">
+					<b>Allow Targeting and Advertising Cookies</b>
+				</label>
+				<p>
+					These are cookies that are used to deliver advertisements more relevant
+					to a visitor's interests, limit the number of times a visitor sees an
+					advertisement, and measure advertisements' effectiveness. They are usually
+					placed by an ad network with a web site operator's permission.
+					In some cases targeting or advertising cookies will be linked to site
+					functionality provided by a third party organization.
+					<a href="http://www.motorolasolutions.com/XU-EN/About/Privacy+Policy#AD_Cookies" class="line">
+						See a list of cookies used by MSI which fall into
+						the category of "Targeting or Advertising Cookies“.
+					</a>
+				</p>
+				<button id="buttonSmt" onclick="changeImg();">Store / update my preferences</button>
+			</form>
+		</div>
+
+		<!--Bottom container-->
+		<div id="bottCont">
+			<p>
+				Note: Your preference selection will be stored by a cookie. You may also change your preferences at any time by following the Change Privacy Settings link found  at the bottom of every page of our site.
+			</p>
+		</div>
+	</div>
+</div>
+
+
+

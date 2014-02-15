@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<title>Quest Software Cookie Preferences</title>
+<style>
+  #dialog {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    width: 600px;
+    margin-left: -300px;
+    box-shadow: 2px 2px 6px #999;
+    border-radius: 10px;
+    font-family: sans-serif;
+    padding-bottom: 15px;
+    color: #242424;
+  }
+  #close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border-radius: 20px;
+    color: white;
+    background-color: #242424;
+    border: 3px solid white;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 24px;
+    box-shadow: 1px 1px 2px #999;
+    height: 30px;
+    width: 30px;
+    line-height: 20px;
+  }
+  h1 {
+    background-color: #023e7a;
+    background-image: -webkit-linear-gradient(top, #3a72a6, #023e7a);
+    color: white;
+    margin: 0;
+    padding: 15px 10px;
+    border-radius: 10px 10px 0 0;
+    font-weight: normal;
+  }
+  a {
+    color: #023e7a;
+  }
+  button, label {
+    cursor: pointer;
+  }
+  #content {
+    padding: 10px;
+  }
+  form input {
+    display: none;
+  }
+  form input:checked + label {
+    background-color: #023e7a;
+    background-image: -webkit-linear-gradient(top, #3a72a6, #023e7a);
+  }
+  form label {
+    display: inline-block;
+    vertical-align: middle;
+    width: 70px;
+    height: 34px;
+    line-height: 32px;
+    vertical-align: middle;
+    background-color: #f7f7f7;
+    background-image: -webkit-linear-gradient(top, #d9d9d9, #f7f7f7);
+    border-radius: 15px;
+    border: 1px solid #ccc;
+  }
+  form label .dot {
+    background-color: #fff;
+    background-image: -webkit-linear-gradient(top, #f7f7f7, #fff);
+    border-radius: 20px;
+    height: 30px;
+    width: 30px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  form label .on, form label .off {
+    width: 33px;
+  }
+  form label .on {
+    display: none;
+  }
+  form input:checked + label .on {
+    display: inline-block;
+    vertical-align: middle;
+    color: white;
+    text-align: right;
+  }
+  form input:checked + label .off {
+    display: none;
+  }
+  form label .off {
+    color: #ba0000;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+  }
+  form p {
+    display: inline-block;
+    width: 490px;
+    vertical-align: middle;
+    padding-left: 10px;
+  }
+  #save {
+    background-color: #023e7a;
+    background-image: -webkit-linear-gradient(top, #3a72a6, #023e7a);
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    border: 1px solid #023e7a;
+    font-family: sans-serif;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+</style>
+<div id='dialog'>
+  <button id='close'>x</button>
+  <h1>Cookie Preferences</h1>
+  <div id='content'>
+    <p>
+      We use cookies on this site to give you the best experience possible.
+      <a href='policy.url'>Find out more about cookies and our privacy policy</a>
+    </p>
+    <p>
+      You can change your settings at anytime below or by visiting our
+      <a href='policy.url'>Privacy Policy</a>
+    </p>
+    <form>
+      <div>
+        <input type='checkbox' id='functional'>
+        <label for='functional'>
+          <div class='on'>ON</div>
+          <div class='dot'></div>
+          <div class='off'>OFF</div>
+        </label>
+        <p>
+          <strong>Functional &amp; Strictly Necessary -</strong>
+          cookies that are essential for site functionality
+          such as security and sign in.
+        </p>
+      </div>
+      <div>
+        <input type='checkbox' id='analytics'>
+        <label for='analytics'>
+          <div class='on'>ON</div>
+          <div class='dot'></div>
+          <div class='off'>OFF</div>
+        </label>
+        <p>
+          <strong>Analytics -</strong>
+          cookies that are used to collect data we analyze to improve
+          site performance and your site experience.
+        </p>
+      </div>
+      <div>
+        <input type='checkbox' id='advertising'>
+        <label for='advertising'>
+          <div class='on'>ON</div>
+          <div class='dot'></div>
+          <div class='off'>OFF</div>
+        </label>
+        <p>
+          <strong>Third Party Advertising -</strong>
+          cookies used to present third-party advertising that is most
+          relevant advertising to you based on your interaction with our
+          site.
+        </p>
+      </div>
+    </form>
+    <button id='save'>Save</button>
+  </div>
+</div>

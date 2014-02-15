@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>norgren overlay 2</title>
+<style>
+  @font-face {
+    font-family: DINWebPro;
+    src: url("http://www.norgren.com/norgrenAssets/35510/DINWebPro.eot");
+  }
+  @font-face {
+    font-family: DINWebPro;
+    src: url("http://www.norgren.com/norgrenAssets/35510/DINWebPro.woff?#iefix") format("woff");
+  }
+  @font-face {
+    font-family: DINWebPro-Medium;
+    src: url("http://www.norgren.com/norgrenAssets/35514/DINWebPro-Medium.eot");
+  }
+  @font-face {
+    font-family: DINWebPro-Medium;
+    src: url("http://www.norgren.com/norgrenAssets/35514/DINWebPro-Medium.woff?#iefix") format("woff");
+  }
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9001;
+    background-color: #eee;
+    opacity: 0.4;
+  }
+  #dialog {
+    position: fixed;
+    z-index: 9002;
+    top: 100px;
+    width: 550px;
+    height: 300px;
+    margin-left: -275px;
+    left: 50%;
+    box-shadow: 0 0 15px #666;
+    background-color: white;
+    font-family: DINWebPro, arial, "Helvetica Neue", Helvetica, "droid sans", sans-serif;
+  }
+  #dialog h1 {
+    background-color: #B21945;
+    margin: 3px;
+    color: white;
+    font-weight: 300;
+    font-size: 22px;
+    height: 27px;
+    line-height: 30px;
+    padding: 10px 20px;
+    position: relative;
+  }
+  #dialog #close {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    font-size: 40px;
+    line-height: 35px;
+    cursor: pointer;
+  }
+  #dialog #close:hover {
+    color: black;
+  }
+  #dialog #content {
+    font-family: DINWebPro-Medium, arial, "Helvetica Neue", Helvetica, "droid sans", sans-serif;
+    padding: 0 23px;
+    font-size: 13px;
+    color: #888;
+  }
+  #dialog a {
+    color: #B21945;
+    text-decoration: none;
+  }
+  #dialog label {
+    display: block;
+  }
+  #dialog label input,
+  #dialog label span {
+    display: inline-block;
+    vertical-align: top;
+  }
+  #dialog #save {
+    margin-top: 20px;
+    font-family: DINWebPro-Medium, arial, "Helvetica Neue", Helvetica, "droid sans", sans-serif;
+    font-size: 13px;
+    color: #f1f1f1;
+    background-color: #B21945;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#c9617d), to(#B21945));
+    background-image: -webkit-linear-gradient(top, #c9617d, #B21945);
+    background-image:    -moz-linear-gradient(top, #c9617d, #B21945);
+    background-image:      -o-linear-gradient(top, #c9617d, #B21945);
+    background-image:         linear-gradient(to bottom, #c9617d, #B21945);
+    border: 1px solid #B21945;
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  #dialog #save:hover {
+    color: white;
+  }
+</style>
+<div id='background'>hello world</div>
+<div id='overlay'></div>
+<div id='dialog'>
+  <h1>
+    <span>COOKIES</span>
+    <span id='close'>&times;</span>
+  </h1>
+  <div id='content'>
+    <p>
+      WE USE COOKIES ON THIS WEBSITE TO HELP US TO UNDERSTAND HOW YOU USE
+      NORGREN WEBSITES, WHICH IMPROVES THE BROWSING EXPERIENCE
+    </p>
+    <p>
+      SET YOUR PREFERENCES HERE AND READ THE
+      <a href='privacyPolicy.url'>PRIVACY POLICY</a>
+      TO LEARN MORE ABOUT OUR DATA COLLECTION METHODS
+    </p>
+    <label>
+      <input type='checkbox'>
+      <span>ALLOW PREFERENCE COOKIES</span>
+    </label>
+    <label>
+      <input type='checkbox'>
+      <span>ALLOW FUNCTIONALITY COOKIES</span>
+    </label>
+    <button id='save'>Save preferences</button>
+  </div>
+</div>

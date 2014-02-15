@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>Game</title>
+<style>
+  #character {
+    background-color: black;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+</style>
+<script src=//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js></script>
+<script>
+  $(function () {
+    var $character = $('#character');
+    var $points = $('#points');
+    var $highscore = $('#highscore');
+    var points = 0, highscore = -1;
+    updateScore();
+    $character.animate({
+      top: 300
+    }, 5000, function () {
+      $character.animate({
+        top: 0
+      }, 500);
+    });
+    $character.click(function () {
+      console.log('click!');
+      points += ~~(Math.pow(-($character.position().left - 400), 4) / 256e5);
+      updateScore();
+      $character.stop()
+       .animate({
+        left: 400
+      }, 1000, function () {
+        $character.animate({
+          left: 0
+        }, 5000 - points, 'linear', function () {
+          points = 0;
+          updateScore();
+        });
+      });
+    });
+    function updateScore () {
+     $points.text(points);
+     if (points > highscore) {
+       highscore = points;
+       $highscore.text(highscore);
+     }
+    }
+  });
+</script>
+<div id=character></div>
+<div id=points></div>
+<div id=highscore></div>

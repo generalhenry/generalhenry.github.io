@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>SignInPage5.3</title>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/noisy/1.1/jquery.noisy.min.js"></script>
+<script>
+  $(function () {
+    $('header').noisy({
+      intensity: 0.9, 
+      size: 200, 
+      opacity: 0.08,
+      fallback: 'WhiteNoise.png',
+      monochrome: false
+    });
+    $('.body, footer').noisy({
+      intensity: 0.9, 
+      size: 200, 
+      opacity: 0.08,
+      monochrome: false
+    });
+    $('.stripe').noisy({
+      intensity: 0.6, 
+      size: 100, 
+      opacity: 0.04,
+      monochrome: false
+    });
+    $('.login form').submit(function(event) {
+      event.preventDefault();
+      $('.login').addClass('wrong');
+      setTimeout(function () {
+        $('.login').removeClass('wrong');
+        $('.login input').val('');
+      }, 500);
+    });
+  });
+</script>
+<style>
+  @import url('style.css');
+</style>
+
+
+<header>
+  <img src=TransparentLogo.png alt=logo>
+  <div class=stripe></div>
+</header>
+
+<div class=body>
+  <div class=login>
+    <form>
+      <legend>Login</legend>
+      <div>
+        <label>Account:</label><!--
+        --><input name=account>
+      </div>
+      <div>
+        <label>Username:</label><!--
+        --><input name=username>
+      </div>
+      <div>
+        <label>Password:</label><!--
+        --><input name=password type=password>
+      </div>
+      <div class=forgot>
+        <a href=#>Forgot your username or password?</a>
+      </div>
+      <button>Login</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class=stripe></div>
+  <div class=contact>
+    <div><a href=#>Contact Us</a></div>
+    <div><a href=#>Ensighten News</a></div>
+  </div>
+  <div class=copyright>
+    <div>&nbsp;</div>
+    <span>© 2012 Ensighten LLC.</span>
+    <span>Cuperinto, CA, USA</span>
+  </div>
+  <!--<div class=contact>
+    <div><a href=mailto:support@ensighten.com>support@ensighten.com</a></div>
+    <div>1.866.811.5315</div>
+  </div>-->
+  <div class=stripe></div>
+</footer>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<title>Cookie Setter</title>
+<script>
+  function herro() {
+    // document.cookie = 'todd=god';
+    localStorage.moo = 'herro';
+    console.log('local', localStorage.moo);
+    alert(localStorage.moo);
+  }
+  /*window.addEventListener('message', function (e) {
+    console.log('pre', document.cookie);
+    console.log(JSON.parse(e.data));
+
+    document.cookie = 'ppkcookie1=testcookie';
+    try {
+      document.body.innerHTML = document.cookie + e.data;
+    } catch (e) {
+      console.log('erroz');
+    }
+    console.log('post', document.cookie);
+  }, false);*/
+</script>
+<button onclick="herro()">Mahna mahna!</button>

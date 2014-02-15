@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>coffee test</title>
+<script src='//nexus.ensighten.com/htilford/Bootstrap.js'></script>
+<script src='whiteList.js'></script>
+<script src='gatewayCore.js'></script>
+<body></body>
+<script>
+(function() {
+  var Bootstrapper, closed, container, dialog, html, mini, overlay;
+  html = "  <style>\n  html, body {\n    min-height: 100%;\n  }\n  #ENS_overlay {\n    z-index: 9001;\n    position: fixed;\n    top: 0;\n    left: 0;\n    height: 100%;\n    width: 100%;\n    background-color: #FFF;\n    background-color: rgba(255,255,255,0.3);\n    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4cffffff', endColorstr='#4cffffff',GradientType=0);\n    zoom: 1;\n  }\n  #ENS_dialog {\n    z-index: 9002;\n    position: fixed;\n    top: 100px; left: 50%;\n    width: 487px;\n    margin: 0 0 0 -244px;\n    background-color: #F7F7F7;\n    font-family: Calibri, Arial, sans-serif;\n    border: 1px solid #DDD;\n  }\n  #ENS_dialog_content {\n    padding: 24px 36px 0 36px;\n  }\n  #ENS_dialog_close {\n    cursor: pointer;\n    position: absolute;\n    top: 2px;\n    right: 9px;\n    color: #B9B9B9;\n  }\n  #ENS_dialog_content h1 {\n    margin: 5px 0;\n    text-align: center;\n    font-size: 21px;\n    font-family: Calibri, Arial, sans-serif;\n  }\n  #ENS_dialog_content hr {\n    width: 100%;\n    border: 0;\n    border-top: 1px #656565 solid;\n    height: 18px;\n    display: block;\n  }\n  #ENS_dialog_text {\n    padding: 0 16px;\n    margin: 0 0 15px;\n  }\n  #ENS_dialog_text p {\n    font-size: 12px;\n    color: #373737;\n    padding: 8px 0 3px;\n  }\n  #ENS_dialog_buttons {\n    text-align: center;\n    margin: 0 0 15px;\n  }\n  #ENS_dialog_btn_notConsent {\n    display: inline-block;\n    cursor: pointer;\n    width: 120px;\n    padding: 6px 0;\n    margin: 0 3px;\n    color: #AAA;\n    border-radius: 3px;\n    background: #e8e8e8;\n    font-family: Calibri, Arial, sans-serif;\n    font-size: 16px;\n    border: 0;\n  }\n  #ENS_dialog_btn_consent {\n    display: inline-block;\n    cursor: pointer;\n    width: 120px;\n    padding: 6px 0;\n    margin: 0 3px;\n    color: #4F93CC;\n    border-radius: 3px;\n    background: #e3f3fe;\n    font-family: Calibri, Arial, sans-serif;\n    font-size: 16px;\n    border: 0;\n  }\n  #ENS_dialog_info {\n    color: #808080;\n    margin: 0 0 16px;\n  }\n  #ENS_dialog_info div {\n    font-size: 12px;\n    text-align: center;\n    margin: 4px 0;\n  }\n  #ENS_dialog_info a {\n    color: #4F93CC;\n  }\n  #ENS_dialog_footer {\n    background: #FFF;\n    height: 36px;\n  }\n  #ENS_dialog_footer img {\n    float: right;\n    margin: 0 16px 0 0;\n  }\n  #ENS_mini {\n    z-index: 9002;\n    position: fixed;\n    bottom: 20px; right: 25px;\n    width: 170px;\n    margin: 0;\n    padding: 10px 12px 10px 10px;\n    opacity: 0.7;\n    background-color: #F7F7F7;\n    border: 1px solid #222;\n    font-family: Calibri, Arial, sans-serif;\n  }\n  #ENS_mini_close {\n    cursor: pointer;\n    position: absolute;\n    z-index: 9003;\n    top: 3px;\n    right: 8px;\n    color: #BBB;\n  }\n  #ENS_mini_settingsBtn {\n    cursor: pointer;\n    margin: 0;\n    font-size: 14px;\n  }\n</style>\n<div id=\"ENS_overlay\" onclick=\"Bootstrapper.privacyDialog.shrink();\"></div>\n<div id=\"ENS_dialog\" onclick=\"return false;\">\n  <div id=\"ENS_dialog_content\">\n    <span id=\"ENS_dialog_close\"\n      onclick=\"return Bootstrapper.privacyDialog.shrink();\">&#10006;</span>\n    <h1>Consumer Data Collection Consent</h1>\n    <hr>\n    <div id=\"ENS_dialog_text\">\n      <p>\n        This site uses cookies and other technologies to recognize your\n        computer so we can customize and enhance your experience.\n        We also work with other companies that use these technologies\n        to customize the ads that you see here and on other sites.\n      </p>\n      <p>\n        Without your consent, you will not have the best experience on\n        this site, and you will see less relevant advertising.\n      </p>\n    </div>\n    <div id=\"ENS_dialog_buttons\">\n      <button id=\"ENS_dialog_btn_notConsent\"\n        onclick=\"Bootstrapper.privacyDialog.setFalse()\">I Do Not Consent</button>\n      <button id=\"ENS_dialog_btn_consent\"\n        onclick=\"Bootstrapper.privacyDialog.setTrue()\">I Consent</button>\n    </div>\n    <div id=\"ENS_dialog_info\">\n      <div>\n        The privacy overlay and button can be customized\n        to integrate cleanly with your sites.\n      </div>\n    </div>\n  </div>\n  <div id=\"ENS_dialog_footer\">\n    <img src=\"powered_by_logo.jpg\" alt=\"powered by Ensighten privacy\">\n  </div>\n</div>\n<div id=\"ENS_mini\" onclick=\"Bootstrapper.privacyDialog.expand()\">\n  <span id=\"ENS_mini_close\"\n    onclick=\"Bootstrapper.privacyDialog.close();\">&#10006;</span>\n  <p id=\"ENS_mini_settingsBtn\">Change Privacy Settings</p>\n</div>";
+  Bootstrapper = window.Bootstrapper || {};
+  window.Bootstrapper = Bootstrapper;
+  container = document.createElement('div');
+  document.body.appendChild(container);
+  container.innerHTML = html;
+  overlay = document.getElementById('ENS_overlay');
+  dialog = document.getElementById('ENS_dialog');
+  mini = document.getElementById('ENS_mini');
+  closed = false;
+  Bootstrapper.privacyDialog = {
+    expand: function() {
+      if (!closed) {
+        container.appendChild(overlay);
+        container.appendChild(dialog);
+        return container.removeChild(mini);
+      }
+    },
+    setTrue: function() {
+      document.cookie = 'ENSIGHTEN_PRIVACY_OPTIN=1; path=/; expires=' + (new Date(45e11)).toUTCString();
+      return this.shrink();
+    },
+    setFalse: function() {
+      document.cookie = 'ENSIGHTEN_PRIVACY_OPTIN=0; path=/; expires=' + (new Date(45e11)).toUTCString();
+      return this.shrink();
+    },
+    shrink: function() {
+      container.removeChild(overlay);
+      container.removeChild(dialog);
+      return container.appendChild(mini);
+    },
+    close: function() {
+      container.removeChild(mini);
+      return closed = true;
+    }
+  };
+  return Bootstrapper.privacyDialog.shrink();
+})();
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>HTML5 Demo: postMessage (cross domain)</title>
+<script src="http://html5demos.com/js/h5utils.js"></script>
+<form>
+  <label for="message">Message</label>
+  <input type="text" name="message" value="my message" id="message">
+  <input type="submit">
+  <iframe id="iframe" src="http://jsbin.com/akaraw/2"></iframe>
+</form>
+<script>
+var win = document.getElementById("iframe").contentWindow;
+
+addEvent(document.querySelector('form'), 'submit', function (e) {
+        win.postMessage(
+                document.getElementById("message").value,
+                "http://jsbin.com"
+        );
+
+        if (e.preventDefault)
+                e.preventDefault();
+        // otherwise set the returnValue property of the original event to false (IE)
+        e.returnValue = false;
+});
+</script>
