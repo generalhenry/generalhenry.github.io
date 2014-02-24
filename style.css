@@ -1,0 +1,19 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #04090D;
+  color: #0081D1;
+  font-family: 'Permanent Marker', Helvetica, arial, verdana, sans-serif;
+}
+h1, main {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 5em;
+  margin: 0.5em auto;
+}
+#me {
+  float: left;
+  margin-right: 2em;
+}

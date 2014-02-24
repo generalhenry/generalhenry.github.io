@@ -4,36 +4,16 @@
 <meta name=apple-mobile-web-app-status-bar-style content=black>
 <title>Henry Allen-Tilford</title>
 <link href='//fonts.googleapis.com/css?family=Permanent+Marker' rel=stylesheet>
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    background-color: #04090D;
-    color: #0081D1;
-    font-family: 'Permanent Marker', Helvetica, arial, verdana, sans-serif;
-  }
-  h1, #main {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  h1 {
-    font-size: 5em;
-    margin: 0.5em auto;
-  }
-  #me {
-    float: left;
-    margin-right: 2em;
-  }
-</style>
+<link href=style.css rel=stylesheet>
 <h1>Henry Allen-Tilford</h1>
-<div id=main>
+<main>
   <p>
     <img id=me alt='Henry Allen-Tilford' src=bgWZ.jpeg>
       A JavaScript developer
-</div>
+</main>
 <script>
   (function () {
-    var henryAllenTilford = {
+    var henry = window.henry = {
       firstName: 'Henry',
       lastName: 'Allen-Tilford',
       email: 'htilford@gmail.com',
@@ -47,6 +27,7 @@
         { zerply: 'htilford' }
       ]
     }
+    window.console && window.console.log(henry);
   })();
 </script>
 <!--
